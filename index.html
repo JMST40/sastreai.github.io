@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sastre AI — Inteligencia Artificial Aplicada</title>
+  <meta name="description" content="Transformamos negocios del sector industrial mediante automatización inteligente y soluciones 100% a medida." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --black:      #000000;
+      --pink:       #ff1493;
+      --pink-light: #ff69b4;
+      --white:      #ffffff;
+      --white-dim:  rgba(255,255,255,0.65);
+      --card-bg:    rgba(255,255,255,0.03);
+      --card-hover: rgba(255,255,255,0.06);
+      --border:     rgba(255,20,147,0.2);
+      --border-strong: rgba(255,20,147,0.4);
+      --glow-soft:  rgba(255,20,147,0.08);
+      --font-h:     'Orbitron', sans-serif;
+      --font-b:     'Exo 2', sans-serif;
+    }
+
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      font-family: var(--font-b);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── Background: Grid + Glows ─────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,20,147,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,20,147,0.04) 1px, transparent 1px);
+      background-size: 22px 22px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 95% 5%,  rgba(255,20,147,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 5%  95%, rgba(255,20,147,0.10) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ─── Helpers ───────────────────────────────────────────────────── */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, var(--pink-light), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .separator {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--pink-light), var(--pink), transparent);
+      border: none;
+      margin: 0;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, var(--pink-light), var(--pink));
+      color: var(--white);
+      font-family: var(--font-b);
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.04em;
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 28px rgba(255,20,147,0.4);
+    }
+    .btn-primary:focus-visible {
+      outline: 2px solid var(--pink);
+      outline-offset: 3px;
+    }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: transparent;
+      color: var(--white);
+      font-family: var(--font-b);
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--border-strong);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+      letter-spacing: 0.04em;
+    }
+    .btn-ghost:hover { background: var(--card-hover); border-color: var(--pink); }
+    .btn-ghost:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
+
+    /* ─── Navbar ────────────────────────────────────────────────────── */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 24px;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .navbar__inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .navbar__logo img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+    .navbar__links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .navbar__links a {
+      color: var(--white-dim);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+    .navbar__links a:hover { color: var(--pink-light); }
+    .navbar__links a:focus-visible { outline: 2px solid var(--pink); outline-offset: 2px; border-radius: 2px; }
+    .navbar__cta { font-size: 0.875rem !important; padding: 9px 22px !important; }
+    .navbar__hamburger {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 8px;
+      cursor: pointer;
+      color: var(--white);
+    }
+    .navbar__hamburger:focus-visible { outline: 2px solid var(--pink); outline-offset: 2px; }
+    .navbar__mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(0,0,0,0.96);
+      border-top: 1px solid var(--border);
+      padding: 16px 24px 24px;
+    }
+    .navbar__mobile-menu.open { display: flex; }
+    .navbar__mobile-menu a {
+      color: var(--white-dim);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .navbar__mobile-menu a:last-child { border-bottom: none; padding-top: 20px; }
+    .navbar__mobile-menu a:hover { color: var(--pink-light); }
+
+    @media (max-width: 768px) {
+      .navbar__links { display: none; }
+      .navbar__hamburger { display: flex; align-items: center; justify-content: center; }
+    }
+
+    /* ─── Hero ──────────────────────────────────────────────────────── */
+    .hero {
+      padding-top: 64px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    .hero__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      padding: 80px 0;
+    }
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border: 1px solid var(--border-strong);
+      border-radius: 100px;
+      background: var(--glow-soft);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pink-light);
+      margin-bottom: 28px;
+    }
+    .hero__badge span { width: 6px; height: 6px; border-radius: 50%; background: var(--pink); display: inline-block; }
+    .hero__title {
+      font-family: var(--font-h);
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .hero__subtitle {
+      font-family: var(--font-h);
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      margin-bottom: 24px;
+    }
+    .hero__desc {
+      font-size: 1.05rem;
+      color: var(--white-dim);
+      max-width: 480px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .hero__actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero__visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero__logo-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+    }
+    .hero__logo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -40px;
+      background: radial-gradient(ellipse at center, rgba(255,20,147,0.18) 0%, transparent 65%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+    .hero__logo-img {
+      width: 100%;
+      height: auto;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 0 40px rgba(255,20,147,0.35));
+    }
+    .hero__lines {
+      position: absolute;
+      top: 50%; left: -40px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .hero__line { width: 2px; background: linear-gradient(180deg, transparent, var(--pink), transparent); }
+    .hero__line:nth-child(1) { height: 80px; opacity: 0.6; }
+    .hero__line:nth-child(2) { height: 140px; opacity: 0.4; }
+    .hero__line:nth-child(3) { height: 60px; opacity: 0.3; }
+
+    @media (max-width: 900px) {
+      .hero__inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+      .hero__desc { margin-left: auto; margin-right: auto; }
+      .hero__actions { justify-content: center; }
+      .hero__lines { display: none; }
+      .hero__logo-wrap { max-width: 280px; margin: 0 auto; }
+    }
+
+    /* ─── Stats ─────────────────────────────────────────────────────── */
+    .stats { padding: 0 0 80px; }
+    .stats__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .stats__item {
+      background: var(--card-bg);
+      padding: 40px 32px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .stats__item:hover { background: var(--card-hover); }
+    .stats__value {
+      font-family: var(--font-h);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stats__label {
+      font-size: 0.85rem;
+      color: var(--white-dim);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 640px) {
+      .stats__grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 400px) {
+      .stats__grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── Section shared ────────────────────────────────────────────── */
+    .section { padding: 96px 0; }
+    .section__eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 14px;
+    }
+    .section__title {
+      font-family: var(--font-h);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .section__subtitle {
+      font-size: 1.05rem;
+      color: var(--white-dim);
+      max-width: 540px;
+      line-height: 1.7;
+    }
+    .section__head { margin-bottom: 56px; }
+
+    /* ─── Services ───────────────────────────────────────────────────── */
+    .services__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .service-card {
+      background: var(--card-bg);
+      padding: 40px 32px;
+      border-left: 3px solid transparent;
+      transition: background 0.2s, border-color 0.2s;
+      position: relative;
+    }
+    .service-card:hover { background: var(--card-hover); border-left-color: var(--pink); }
+    .service-card__icon {
+      width: 48px; height: 48px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border-strong);
+      border-radius: 8px;
+      background: rgba(255,20,147,0.06);
+      margin-bottom: 20px;
+    }
+    .service-card__icon svg { width: 22px; height: 22px; color: var(--pink); }
+    .service-card__title {
+      font-family: var(--font-h);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+    .service-card__desc { font-size: 0.9rem; color: var(--white-dim); line-height: 1.65; }
+
+    @media (max-width: 900px) { .services__grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 580px) { .services__grid { grid-template-columns: 1fr; } }
+
+    /* ─── Philosophy ─────────────────────────────────────────────────── */
+    .philosophy { background: var(--card-bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .philosophy__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .philosophy__quote {
+      font-family: var(--font-h);
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 700;
+      line-height: 1.55;
+      letter-spacing: 0.01em;
+      padding-left: 24px;
+      border-left: 3px solid var(--pink);
+    }
+    .philosophy__points { list-style: none; display: flex; flex-direction: column; gap: 24px; }
+    .philosophy__point {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .philosophy__dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink-light), var(--pink));
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .philosophy__point-text { font-size: 0.95rem; color: var(--white-dim); line-height: 1.65; }
+    .philosophy__point-text strong { color: var(--white); font-weight: 600; }
+
+    @media (max-width: 800px) {
+      .philosophy__inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* ─── Contact ────────────────────────────────────────────────────── */
+    .contact__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact__info { display: flex; flex-direction: column; gap: 32px; }
+    .contact__item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .contact__item:hover { background: var(--card-hover); border-color: var(--border-strong); }
+    .contact__icon {
+      width: 48px; height: 48px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border-strong);
+      border-radius: 8px;
+      background: rgba(255,20,147,0.06);
+    }
+    .contact__icon svg { width: 20px; height: 20px; color: var(--pink); }
+    .contact__item-label { font-size: 0.75rem; color: var(--white-dim); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+    .contact__item-value { font-size: 1rem; color: var(--white); font-weight: 600; text-decoration: none; }
+    .contact__item-value:hover { color: var(--pink-light); }
+    .contact__cta-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .contact__cta-box h3 {
+      font-family: var(--font-h);
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .contact__cta-box p { color: var(--white-dim); font-size: 0.95rem; margin-bottom: 32px; line-height: 1.65; }
+
+    @media (max-width: 800px) {
+      .contact__grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* ─── Footer ─────────────────────────────────────────────────────── */
+    .footer {
+      padding: 48px 0 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .footer__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .footer__logo img { height: 28px; width: auto; }
+    .footer__copy { font-size: 0.8rem; color: var(--white-dim); }
+    .footer__tagline {
+      font-size: 0.75rem;
+      color: var(--pink);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ─── Skip link ──────────────────────────────────────────────────── */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 16px;
+      padding: 8px 16px;
+      background: var(--pink);
+      color: var(--white);
+      font-weight: 700;
+      border-radius: 4px;
+      text-decoration: none;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 8px; }
+
+    /* ─── Scroll reveal ──────────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <!-- ── Navbar ───────────────────────────────────────────────────── -->
+  <header role="banner">
+    <nav class="navbar" aria-label="Navegación principal">
+      <div class="navbar__inner">
+        <a class="navbar__logo" href="#" aria-label="Sastre AI — Inicio">
+          <img src="Logos/secundario transparente rosa.png" alt="Sastre AI" />
+        </a>
+        <ul class="navbar__links" role="list">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#filosofia">Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li>
+            <a href="#contacto" class="btn-primary navbar__cta" aria-label="Hablar con Sastre AI">¿Hablamos?</a>
+          </li>
+        </ul>
+        <button class="navbar__hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" id="hamburger-btn">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <rect y="3"  width="20" height="2" rx="1" fill="currentColor"/>
+            <rect y="9"  width="20" height="2" rx="1" fill="currentColor"/>
+            <rect y="15" width="20" height="2" rx="1" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+      <div class="navbar__mobile-menu" id="mobile-menu" role="menu" aria-label="Menú móvil">
+        <a href="#servicios" role="menuitem">Servicios</a>
+        <a href="#filosofia" role="menuitem">Nosotros</a>
+        <a href="#contacto" role="menuitem">Contacto</a>
+        <a href="#contacto" class="btn-primary" role="menuitem" style="text-align:center;">¿Hablamos?</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ── Hero ──────────────────────────────────────────────────────── -->
+    <section class="hero" aria-label="Presentación">
+      <div class="container">
+        <div class="hero__inner">
+          <div>
+            <div class="hero__badge reveal">
+              <span aria-hidden="true"></span>
+              Inteligencia Artificial Aplicada
+            </div>
+            <h1 class="hero__title reveal">
+              Tu empresa.<br />
+              <span class="gradient-text">Potenciada por IA.</span>
+            </h1>
+            <p class="hero__subtitle reveal">Automatización · Innovación · Resultados</p>
+            <p class="hero__desc reveal">
+              Transformamos negocios del sector industrial mediante automatización inteligente y soluciones 100% a medida. Sin tecnología genérica: soluciones que funcionan desde el primer día.
+            </p>
+            <div class="hero__actions reveal">
+              <a href="#contacto" class="btn-primary">¿Hablamos?</a>
+              <a href="#servicios" class="btn-ghost">Ver servicios</a>
+            </div>
+          </div>
+          <div class="hero__visual reveal" aria-hidden="true">
+            <div class="hero__logo-wrap">
+              <div class="hero__lines">
+                <div class="hero__line"></div>
+                <div class="hero__line"></div>
+                <div class="hero__line"></div>
+              </div>
+              <img
+                class="hero__logo-img"
+                src="Logos/principal transparente degradado.png"
+                alt=""
+                role="presentation"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="separator" />
+
+    <!-- ── Stats ─────────────────────────────────────────────────────── -->
+    <section class="stats" aria-label="Métricas clave">
+      <div class="container">
+        <div class="stats__grid reveal">
+          <div class="stats__item">
+            <div class="stats__value gradient-text">80%</div>
+            <div class="stats__label">Reducción de tareas manuales</div>
+          </div>
+          <div class="stats__item">
+            <div class="stats__value gradient-text">24/7</div>
+            <div class="stats__label">Sistemas activos</div>
+          </div>
+          <div class="stats__item">
+            <div class="stats__value gradient-text">100%</div>
+            <div class="stats__label">Solución a medida</div>
+          </div>
+          <div class="stats__item">
+            <div class="stats__value gradient-text">ROI</div>
+            <div class="stats__label">Medible desde el día 1</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="separator" />
+
+    <!-- ── Services ──────────────────────────────────────────────────── -->
+    <section class="section" id="servicios" aria-label="Servicios">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__eyebrow">Lo que hacemos</p>
+          <h2 class="section__title">Soluciones diseñadas<br /><span class="gradient-text">para tu industria</span></h2>
+          <p class="section__subtitle">Cada proyecto parte de un análisis real de tu operativa. Identificamos dónde la IA genera impacto y entregamos una solución que funciona.</p>
+        </div>
+        <div class="services__grid">
+
+          <article class="service-card reveal">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3 class="service-card__title">Automatización de Procesos</h3>
+            <p class="service-card__desc">Flujos automáticos que ahorran horas diarias y eliminan el error humano en tus operaciones repetitivas.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <h3 class="service-card__title">Agentes y Asistentes IA</h3>
+            <p class="service-card__desc">Asistentes entrenados específicamente para tu negocio: atención, gestión interna y soporte operativo.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3 class="service-card__title">Visión Artificial</h3>
+            <p class="service-card__desc">Control de calidad y detección de defectos en tiempo real en líneas de producción industrial.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 4-4"/></svg>
+            </div>
+            <h3 class="service-card__title">Datos e Informes en Tiempo Real</h3>
+            <p class="service-card__desc">Dashboards automáticos para tomar decisiones basadas en datos, no en intuición. Toda tu operativa visible al instante.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            </div>
+            <h3 class="service-card__title">Software y Apps a Medida</h3>
+            <p class="service-card__desc">Aplicaciones con IA integrada construidas exactamente para lo que tu empresa necesita, sin funcionalidades innecesarias.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="12" r="3"/><circle cx="16" cy="6" r="3"/><circle cx="16" cy="18" r="3"/><path d="M11 10.5l2-1.5M11 13.5l2 1.5"/></svg>
+            </div>
+            <h3 class="service-card__title">Integración de Sistemas</h3>
+            <p class="service-card__desc">Conexión de tu ERP, CRM y maquinaria existente con IA sin interrumpir la operativa ni reemplazar lo que ya funciona.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="separator" />
+
+    <!-- ── Philosophy ─────────────────────────────────────────────────── -->
+    <section class="section philosophy" id="filosofia" aria-label="Nuestra filosofía">
+      <div class="container">
+        <div class="philosophy__inner">
+          <div class="reveal">
+            <p class="section__eyebrow">Nuestra filosofía</p>
+            <h2 class="section__title">No vendemos<br /><span class="gradient-text">tecnología por vender</span></h2>
+            <blockquote class="philosophy__quote">
+              "Analizamos tu operativa, identificamos dónde la IA genera impacto real y entregamos soluciones que funcionan desde el primer día."
+            </blockquote>
+          </div>
+          <ul class="philosophy__points reveal" aria-label="Nuestros valores">
+            <li class="philosophy__point">
+              <div class="philosophy__dot" aria-hidden="true"></div>
+              <p class="philosophy__point-text"><strong>Premium y especializado.</strong> Trabajamos en profundidad con cada cliente, no escalamos con soluciones genéricas.</p>
+            </li>
+            <li class="philosophy__point">
+              <div class="philosophy__dot" aria-hidden="true"></div>
+              <p class="philosophy__point-text"><strong>Resultados medibles.</strong> Cada proyecto incluye métricas de impacto desde el arranque. Sin humo, sin promesas vacías.</p>
+            </li>
+            <li class="philosophy__point">
+              <div class="philosophy__dot" aria-hidden="true"></div>
+              <p class="philosophy__point-text"><strong>Sector industrial en el ADN.</strong> Fabricación, producción, logística y operaciones: es nuestro entorno natural.</p>
+            </li>
+            <li class="philosophy__point">
+              <div class="philosophy__dot" aria-hidden="true"></div>
+              <p class="philosophy__point-text"><strong>Sin interrupciones.</strong> Integramos la IA en lo que ya tienes. Tu operativa no se para, se potencia.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="separator" />
+
+    <!-- ── Contact ────────────────────────────────────────────────────── -->
+    <section class="section" id="contacto" aria-label="Contacto">
+      <div class="container">
+        <div class="section__head reveal" style="text-align:center; max-width:560px; margin-left:auto; margin-right:auto;">
+          <p class="section__eyebrow">Hablemos</p>
+          <h2 class="section__title">¿Listo para transformar<br /><span class="gradient-text">tu empresa con IA?</span></h2>
+          <p class="section__subtitle" style="margin:0 auto;">Cuéntanos tu reto. Analizamos si hay fit real y te decimos con honestidad qué impacto puede generar la IA en tu caso.</p>
+        </div>
+        <div class="contact__grid reveal">
+          <div class="contact__info">
+            <div class="contact__item">
+              <div class="contact__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+              </div>
+              <div>
+                <p class="contact__item-label">Teléfono</p>
+                <a class="contact__item-value" href="tel:+34654061324">+34 654 06 13 24</a>
+              </div>
+            </div>
+            <div class="contact__item">
+              <div class="contact__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <p class="contact__item-label">Email</p>
+                <a class="contact__item-value" href="mailto:info@sastreai.es">info@sastreai.es</a>
+              </div>
+            </div>
+            <div class="contact__item">
+              <div class="contact__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <div>
+                <p class="contact__item-label">Web</p>
+                <a class="contact__item-value" href="https://sastreai.es" target="_blank" rel="noopener noreferrer">sastreai.es</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact__cta-box">
+            <h3>¿Hablamos?</h3>
+            <p>Sin compromiso. En 30 minutos sabrás si la IA puede transformar tu negocio y cómo.</p>
+            <a href="mailto:info@sastreai.es" class="btn-primary" style="width:100%; justify-content:center;">
+              Escribir a Sastre AI
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────── -->
+  <hr class="separator" />
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="#" aria-label="Sastre AI — Volver al inicio">
+          <img src="Logos/secundario transparente rosa.png" alt="Sastre AI" style="height:28px;" />
+        </a>
+        <p class="footer__copy">© 2025 Sastre AI. Todos los derechos reservados.</p>
+        <p class="footer__tagline">Inteligencia Artificial Aplicada</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Mobile menu ──────────────────────────────────────────────────
+    const btn  = document.getElementById('hamburger-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ── Smooth scroll for hash links ─────────────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          target.focus({ preventScroll: true });
+        }
+      });
+    });
+
+    // ── Scroll reveal ─────────────────────────────────────────────────
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
