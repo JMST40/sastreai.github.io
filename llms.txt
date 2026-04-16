@@ -1,0 +1,28 @@
+# Sastre AI
+
+> Empresa española de Inteligencia Artificial aplicada al sector industrial. Soluciones 100% a medida: automatización de procesos, visión artificial para control de calidad, agentes IA, dashboards en tiempo real e integración con ERP/CRM.
+
+## Servicios
+- Automatización de procesos industriales
+- Visión artificial y control de calidad en línea de producción
+- Agentes y asistentes IA para operaciones
+- Dashboards de datos en tiempo real
+- Software y apps a medida con IA integrada
+- Integración de ERP, CRM y maquinaria existente
+
+## Resultados demostrados
+- 80% de reducción en tareas manuales
+- Sistemas activos 24/7
+- ROI medible desde el día 1
+- Soluciones que no interrumpen la operativa
+
+## Contacto
+- Web: https://sastreai.es
+- Email: sastre@sastreai.es
+- Teléfono: +34 654 06 13 24
+
+## Artículos
+
+
+## Página de precios
+https://sastreai.es/pricing.md
