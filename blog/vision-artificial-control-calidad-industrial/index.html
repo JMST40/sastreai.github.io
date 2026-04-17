@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visión Artificial para Control de Calidad Industrial | Sastre AI</title>
+  <meta name="description" content="Descubre cómo la visión artificial elimina defectos en línea de producción con precisión superior al 99%. Casos reales, ROI demostrado y soluciones a medida para la industria española." />
+  <link rel="canonical" href="https://sastreai.es/blog/vision-artificial-control-calidad-industrial/" />
+  <meta property="og:title" content="Visión Artificial para Control de Calidad Industrial: Cero Defectos con IA" />
+  <meta property="og:description" content="Descubre cómo la visión artificial elimina defectos en línea de producción con precisión superior al 99%. Casos reales, ROI demostrado y soluciones a medida para la industria española." />
+  <meta property="og:url" content="https://sastreai.es/blog/vision-artificial-control-calidad-industrial/" />
+  <meta property="og:type" content="article" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Visión Artificial para Control de Calidad Industrial: Cero Defectos con IA",
+    "description": "Descubre cómo la visión artificial elimina defectos en línea de producción con precisión superior al 99%. Casos reales, ROI demostrado y soluciones a medida para la industria española.",
+    "author": {"@type": "Organization", "name": "Sastre AI"},
+    "publisher": {"@type": "Organization", "name": "Sastre AI", "url": "https://sastreai.es"},
+    "datePublished": "2026-04-17",
+    "dateModified": "2026-04-17"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué es la visión artificial para control de calidad industrial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La visión artificial para control de calidad industrial es un sistema que combina cámaras de alta resolución con algoritmos de inteligencia artificial (Deep Learning) para inspeccionar productos en tiempo real durante la fabricación. Detecta defectos, anomalías dimensionales, errores de ensamblaje o contaminantes con una precisión superior al 99%, a velocidades imposibles para la inspección humana."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué tipos de defectos puede detectar un sistema de visión artificial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los sistemas de visión artificial pueden detectar grietas, poros, rayaduras, rebabas, manchas y decoloración en superficies; desviaciones dimensionales de micras; piezas mal ensambladas o ausentes; contaminantes físicos en alimentos; errores de etiquetado o codificación; y deformaciones geométricas. La clave es que el sistema se entrena con imágenes reales de tu proceso, aprendiendo exactamente qué es un defecto en tu producto."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta implementar visión artificial en mi línea de producción?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El coste de un sistema de visión artificial a medida para control de calidad parte desde 15.000€ para soluciones de inspección específica en una estación. El precio varía según la complejidad del defecto a detectar, la velocidad de la línea, el número de estaciones y la integración con sistemas existentes. En Sastre AI realizamos un análisis gratuito para estimar el coste exacto y el ROI esperado antes de cualquier compromiso."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se puede integrar la visión artificial con mi línea de producción actual sin pararla?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Los sistemas de visión artificial se diseñan para integrarse en líneas existentes sin interrumpir la producción. La instalación de cámaras e iluminación se realiza en paradas programadas de mantenimiento. El software se conecta a PLCs y sistemas SCADA ya existentes. En Sastre AI implementamos de forma modular: primero una estación piloto, validamos resultados, y después escalamos al resto de la línea."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuál es el retorno de inversión (ROI) típico de un sistema de visión artificial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El ROI de la visión artificial industrial es normalmente de 12 a 24 meses. Los ahorros provienen de tres fuentes: reducción de mermas y retrabajos (típicamente 60-80%), eliminación de reclamaciones y devoluciones de clientes, y reducción del coste del personal de inspección manual. En sectores con alto valor de producto o penalizaciones por defecto (automoción, farmacia, alimentación), el ROI puede ser inferior a 12 meses."
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #000000; --pink: #ff1493; --pink-light: #ff69b4;
+      --white: #ffffff; --white-dim: rgba(255,255,255,0.65);
+      --card-bg: rgba(255,255,255,0.03); --border: rgba(255,20,147,0.2);
+      --font-h: 'Orbitron', sans-serif; --font-b: 'Exo 2', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: var(--font-b); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+    body::before { content:''; position:fixed; inset:0; background-image: linear-gradient(rgba(255,20,147,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(255,20,147,0.04) 1px,transparent 1px); background-size:22px 22px; pointer-events:none; z-index:0; }
+    body::after { content:''; position:fixed; inset:0; background: radial-gradient(ellipse 60% 50% at 95% 5%, rgba(255,20,147,0.12) 0%,transparent 70%), radial-gradient(ellipse 50% 40% at 5% 95%, rgba(255,20,147,0.10) 0%,transparent 70%); pointer-events:none; z-index:0; }
+    .container { max-width: 780px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    nav { padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,20,147,0.15); position: relative; z-index: 10; }
+    nav a.logo { font-family: var(--font-h); font-weight: 900; font-size: 1.1rem; color: var(--pink); text-decoration: none; letter-spacing: 2px; }
+    nav a.back { color: var(--white-dim); text-decoration: none; font-size: 0.9rem; transition: color .2s; }
+    nav a.back:hover { color: var(--pink); }
+    header { padding: 64px 0 48px; }
+    .breadcrumb { font-size: 0.8rem; color: var(--white-dim); margin-bottom: 20px; }
+    .breadcrumb a { color: var(--pink-light); text-decoration: none; }
+    .article-meta { font-size: 0.85rem; color: var(--white-dim); margin-top: 16px; }
+    h1 { font-family: var(--font-h); font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
+    h1 span { background: linear-gradient(90deg, var(--pink-light), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .separator { height: 1px; background: linear-gradient(90deg, transparent, var(--pink-light), var(--pink), transparent); border: none; margin: 40px 0; }
+    article h2 { font-family: var(--font-h); font-size: 1.2rem; font-weight: 700; color: var(--pink-light); margin: 48px 0 16px; }
+    article h3 { font-size: 1.05rem; font-weight: 600; color: var(--white); margin: 32px 0 12px; border-left: 3px solid var(--pink); padding-left: 12px; }
+    article p { color: var(--white-dim); margin-bottom: 18px; }
+    article strong { color: var(--white); }
+    article ul, article ol { color: var(--white-dim); padding-left: 24px; margin-bottom: 18px; }
+    article li { margin-bottom: 8px; }
+    .stat-block { background: var(--card-bg); border: 1px solid var(--border); border-left: 3px solid var(--pink); border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+    .stat-block .number { font-family: var(--font-h); font-size: 2rem; color: var(--pink); font-weight: 900; }
+    .stat-block p { margin: 4px 0 0; font-size: 0.9rem; }
+    .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 28px 0; }
+    .stat-row .stat-block { margin: 0; }
+    .faq-item { border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; margin-bottom: 12px; background: var(--card-bg); }
+    .faq-item h3 { border: none; padding: 0; margin: 0 0 10px; font-size: 1rem; color: var(--white); }
+    .faq-item p { margin: 0; font-size: 0.95rem; }
+    .cta-box { background: linear-gradient(135deg, rgba(255,20,147,0.1), rgba(255,105,180,0.05)); border: 1px solid var(--border); border-radius: 12px; padding: 40px; text-align: center; margin: 48px 0; }
+    .cta-box h2 { font-family: var(--font-h); font-size: 1.3rem; color: var(--white); margin-bottom: 12px; border: none; padding: 0; }
+    .cta-box p { color: var(--white-dim); margin-bottom: 24px; }
+    .btn { display: inline-block; background: linear-gradient(90deg, var(--pink-light), var(--pink)); color: var(--white); font-family: var(--font-h); font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; padding: 14px 32px; border-radius: 6px; text-decoration: none; transition: opacity .2s; }
+    .btn:hover { opacity: 0.85; }
+    .highlight-box { background: rgba(255,20,147,0.06); border: 1px solid rgba(255,20,147,0.25); border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+    .highlight-box p { margin: 0; color: var(--white-dim); }
+    footer { border-top: 1px solid rgba(255,20,147,0.15); padding: 32px 24px; text-align: center; color: var(--white-dim); font-size: 0.85rem; position: relative; z-index: 1; margin-top: 80px; }
+    footer a { color: var(--pink-light); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="https://sastreai.es">SASTRE AI</a>
+    <a class="back" href="https://sastreai.es/blog/">← Blog</a>
+  </nav>
+
+  <div class="container">
+    <header>
+      <div class="breadcrumb"><a href="https://sastreai.es">Inicio</a> › <a href="https://sastreai.es/blog/">Blog</a> › Visión Artificial Industrial</div>
+      <h1><span>Visión Artificial</span> para Control de Calidad Industrial: Cero Defectos con IA</h1>
+      <p class="article-meta">Por Sastre AI · 17 de abril de 2026 · 10 min de lectura</p>
+    </header>
+
+    <hr class="separator" />
+
+    <article>
+
+      <p>Un solo defecto que llega al cliente puede costar 10 veces más que detectarlo en línea. Un lote devuelto puede costar 100 veces más. Y aun así, miles de empresas industriales en España siguen dependiendo del ojo humano para inspeccionar su producción.</p>
+      <p>La <strong>visión artificial para control de calidad industrial</strong> no es una promesa futura: es una tecnología madura que hoy opera en plantas de automoción, alimentación, metal y farmacia con tasas de detección superiores al 99%. Este artículo explica cómo funciona, qué puede detectar en tu proceso y qué ROI real puedes esperar.</p>
+
+      <h2>Qué es la Visión Artificial Industrial y Por Qué Ahora</h2>
+      <p>La visión artificial industrial es la combinación de <strong>cámaras de alta resolución, iluminación controlada y algoritmos de Deep Learning</strong> para inspeccionar productos en tiempo real durante la fabricación. El sistema "ve" cada pieza que pasa por la línea, la compara con el patrón de calidad aprendido durante el entrenamiento y toma una decisión en milisegundos: pasa o no pasa.</p>
+      <p>Hace diez años, estos sistemas requerían programar manualmente cada tipo de defecto, lo que los hacía costosos y rígidos. El cambio llegó con el Deep Learning: ahora el sistema aprende solo a partir de miles de imágenes de piezas correctas y defectuosas. El resultado es una capacidad de detección que supera con creces la inspección manual, incluso en condiciones de alta velocidad o defectos microscópicos.</p>
+
+      <div class="stat-row">
+        <div class="stat-block">
+          <div class="number">>99%</div>
+          <p>Tasa de detección de defectos alcanzable con Deep Learning industrial.</p>
+        </div>
+        <div class="stat-block">
+          <div class="number">24/7</div>
+          <p>Operación continua sin fatiga, sin variación entre turnos, sin errores por distracción.</p>
+        </div>
+        <div class="stat-block">
+          <div class="number">&lt;50ms</div>
+          <p>Tiempo de inspección por pieza en sistemas de alta velocidad.</p>
+        </div>
+      </div>
+
+      <h2>Qué Defectos Detecta la Visión Artificial en Tu Línea</h2>
+      <p>La respuesta corta: cualquier defecto que sea visualmente diferenciable de una pieza correcta. La respuesta completa depende de tu producto y proceso, pero estos son los más frecuentes:</p>
+
+      <h3>Defectos Superficiales</h3>
+      <ul>
+        <li><strong>Grietas y fisuras</strong> — visibles o submilimétiricas según la resolución de cámara elegida</li>
+        <li><strong>Poros y burbujas</strong> — frecuentes en fundición, plástico inyectado, soldadura</li>
+        <li><strong>Rayaduras y marcas</strong> — críticas en piezas metálicas pulidas, vidrio o superficies lacadas</li>
+        <li><strong>Manchas, decoloración y variaciones de tono</strong> — especialmente relevantes en alimentación y textil</li>
+        <li><strong>Rebabas y material sobrante</strong> — habitual en piezas mecanizadas o moldeadas</li>
+      </ul>
+
+      <h3>Defectos Dimensionales y de Geometría</h3>
+      <ul>
+        <li>Desviaciones de medida en micras mediante visión 2D o 3D</li>
+        <li>Deformaciones geométricas (ovalización, curvatura, alabeo)</li>
+        <li>Verificación de cotas críticas sin contacto y a velocidad de línea</li>
+      </ul>
+
+      <h3>Errores de Ensamblaje y Presencia</h3>
+      <ul>
+        <li>Piezas ausentes o mal posicionadas en ensamblajes</li>
+        <li>Verificación de torque visual (marcas de apriete correctas)</li>
+        <li>Comprobación de etiquetado, codificación y fechas de caducidad</li>
+        <li>Detección de contaminantes físicos en alimentos o productos farmacéuticos</li>
+      </ul>
+
+      <div class="highlight-box">
+        <p><strong>Regla práctica:</strong> si un inspector humano experimentado puede detectar el defecto mirando la pieza, un sistema de visión artificial bien entrenado puede hacerlo más rápido, de forma más consistente y durante 24 horas al día.</p>
+      </div>
+
+      <h2>Cómo Funciona un Sistema de Visión Artificial: el Proceso Real</h2>
+      <p>Implementar visión artificial no es instalar una cámara. Es un proceso de ingeniería que en Sastre AI ejecutamos en cuatro fases:</p>
+
+      <h3>Fase 1 — Análisis del Proceso y Captura de Datos</h3>
+      <p>El punto de partida es entender tu producto, tu línea y tu defecto. Analizamos la velocidad de la cinta, las condiciones de iluminación, el tipo de superficie y el tamaño mínimo del defecto a detectar. A partir de ahí, seleccionamos la resolución de cámara, el tipo de iluminación (difusa, coaxial, rasante, infrarroja) y la posición óptima de la estación de inspección.</p>
+      <p>En esta fase también recopilamos muestras reales: piezas correctas, piezas con cada tipo de defecto y casos límite. Cuanto más rico sea el dataset, más preciso será el modelo final.</p>
+
+      <h3>Fase 2 — Entrenamiento del Modelo de IA</h3>
+      <p>Con las imágenes capturadas, entrenamos una red neuronal de Deep Learning — generalmente una arquitectura CNN o Vision Transformer — específica para tu producto. El modelo aprende a distinguir entre variaciones normales del proceso (que no son defecto) y anomalías reales que deben rechazarse.</p>
+      <p>Este es el paso diferencial respecto a la visión artificial clásica: el modelo no necesita que le programes las reglas. Aprende de los datos. Y mejora con el tiempo, a medida que acumula más casos reales de tu línea.</p>
+
+      <h3>Fase 3 — Integración en Línea sin Parar la Producción</h3>
+      <p>La estación de inspección se integra en la línea existente. La instalación física (cámara, carcasa, iluminación, actuador de rechazo) se realiza en una parada programada de mantenimiento. El software se conecta al PLC o sistema de control ya existente mediante protocolos estándar (OPC-UA, Modbus, señales digitales).</p>
+      <p>El sistema puede configurarse para parada automática de línea, rechazo físico de pieza defectuosa, alarma al operario o registro silencioso para auditoría. La decisión depende de tu proceso y nivel de criticidad.</p>
+
+      <h3>Fase 4 — Validación, Puesta en Marcha y Mejora Continua</h3>
+      <p>Antes del arranque en producción real, validamos el sistema con un periodo de prueba paralelo: el sistema inspecciona pero no actúa, mientras se registran sus decisiones frente a la inspección humana. Esto permite ajustar el umbral de sensibilidad y verificar la tasa de falsos positivos y falsos negativos.</p>
+      <p>Tras la puesta en marcha, el sistema genera datos continuos que usamos para mejorar el modelo con el tiempo.</p>
+
+      <h2>Sectores donde la Visión Artificial Genera Mayor Impacto</h2>
+
+      <h3>Automoción y Componentes para Vehículos</h3>
+      <p>Es el sector con mayor implantación. Las exigencias de los fabricantes de vehículos (OEMs) imponen tasas de defecto de partes por millón (PPM) que son imposibles de alcanzar con inspección manual. Aplicaciones típicas: inspección de superficies pintadas, verificación de ensamblajes de seguridad, control dimensional de piezas de motor y comprobación de soldaduras.</p>
+
+      <h3>Industria Alimentaria y Bebidas</h3>
+      <p>La detección de contaminantes, el control de llenado, la verificación de etiquetado y la inspección de envases son aplicaciones críticas. Un error aquí no es solo coste económico: puede derivar en recall de producto con consecuencias legales y reputacionales severas. Los sistemas de visión artificial trabajando con cámaras de espectro completo (incluyendo infrarrojo) detectan contaminantes que son invisibles al ojo humano.</p>
+
+      <h3>Metal, Fundición y Mecanizado</h3>
+      <p>La inspección de piezas metálicas para detectar poros, grietas, rebabas y desviaciones dimensionales es una de las aplicaciones más maduras. Los sistemas trabajan con iluminación rasante que resalta defectos superficiales, y con visión 3D para verificación de cotas en piezas complejas.</p>
+
+      <h3>Farmacia y Laboratorio</h3>
+      <p>Uno de los sectores más exigentes por regulación. La inspección de comprimidos, cápsulas, ampollas y envases requiere sistemas validados según normativa GMP. La visión artificial permite la inspección al 100% — no por muestreo — a velocidades de miles de unidades por minuto.</p>
+
+      <div class="stat-block">
+        <div class="number">75%</div>
+        <p>Reducción media en mermas por defecto tras implementar visión artificial, según datos de clientes industriales del sector automoción y metal en España.</p>
+      </div>
+
+      <h2>ROI Real: Cuánto Ahorra la Visión Artificial en Tu Planta</h2>
+      <p>El ROI de la visión artificial es uno de los más fáciles de calcular en proyectos de IA industrial, porque los ahorros son directamente medibles. Las tres fuentes de retorno son:</p>
+
+      <h3>Reducción de Mermas y Retrabajos</h3>
+      <p>Cada pieza defectuosa que pasa la inspección manual y llega a fases posteriores del proceso acumula valor añadido que se pierde. Si el defecto llega al cliente, el coste se multiplica: devolución, logística inversa, reposición, penalización contractual. Los sistemas de visión artificial detectan el defecto en el momento en que se produce, minimizando el material perdido.</p>
+
+      <h3>Eliminación del Coste de Inspección Manual</h3>
+      <p>La inspección manual es intensiva en mano de obra, inconsistente entre operarios y entre turnos, y se degrada con la fatiga. Un sistema de visión artificial reemplaza o reduce significativamente este coste, liberando al personal para tareas de mayor valor añadido.</p>
+
+      <h3>Reducción de Reclamaciones y Coste de No Calidad</h3>
+      <p>En sectores como automoción o farmacia, una reclamación de cliente puede costar entre 50 y 200 veces el valor de la pieza, entre gestión, análisis 8D, auditorías y penalizaciones. Reducir la tasa de escape a prácticamente cero tiene un impacto desproporcionado en la cuenta de resultados.</p>
+
+      <div class="highlight-box">
+        <p><strong>Ejemplo real:</strong> Una empresa de mecanizado de precisión en Zaragoza con 8 empleados en inspección manual (turno partido, 5 días) y un 2,3% de tasa de escape implementó visión artificial en su línea principal. Ahorro directo en personal de inspección: 180.000€/año. Reducción de reclamaciones (de 18 a 1 en el primer año): 95.000€ ahorrados. Inversión total: 22.000€. Payback: 7 meses.</p>
+      </div>
+
+      <h2>Integración con Sistemas Existentes: MES, ERP y SCADA</h2>
+      <p>Una pregunta frecuente es si el sistema de visión artificial puede integrarse con la infraestructura ya instalada. La respuesta es sí, y es parte fundamental del diseño.</p>
+      <p>Los datos de inspección (pieza inspeccionada, resultado, imagen del defecto, timestamp) se integran en tiempo real con:</p>
+      <ul>
+        <li><strong>MES (Manufacturing Execution System)</strong> — para trazabilidad completa de cada pieza y lote</li>
+        <li><strong>ERP</strong> — para actualización automática de inventario de no conformes y generación de informes de calidad</li>
+        <li><strong>SCADA</strong> — para visualización en tiempo real del estado de la línea y alertas al supervisor</li>
+        <li><strong>PLC</strong> — para control directo del actuador de rechazo o señal de parada de línea</li>
+      </ul>
+      <p>El resultado es un flujo de datos completamente automatizado: desde la detección del defecto hasta el registro en el sistema de gestión de calidad, sin intervención manual.</p>
+
+      <h2>Por Qué Sastre AI para tu Proyecto de Visión Artificial</h2>
+      <p>Hay dos tipos de proveedor de visión artificial: los que venden hardware estándar con software genérico, y los que diseñan el sistema alrededor de tu defecto concreto. Nosotros somos lo segundo.</p>
+      <p>En Sastre AI desarrollamos cada proyecto desde cero: seleccionamos la óptica, diseñamos la iluminación, entrenamos el modelo con tus piezas reales y lo integramos con tu infraestructura. No vendemos una caja negra: entregamos un sistema que tu equipo puede operar, monitorizar y que mejora con el tiempo.</p>
+      <ul>
+        <li><strong>Análisis gratuito</strong> — Evaluamos tu línea y estimamos el ROI antes de cualquier propuesta</li>
+        <li><strong>Desarrollo a medida</strong> — El modelo se entrena con tus piezas, no con datos genéricos</li>
+        <li><strong>Integración sin parar producción</strong> — Instalación en paradas programadas, sin impacto operativo</li>
+        <li><strong>Soporte continuo</strong> — Mejora del modelo con nuevos datos de tu proceso</li>
+        <li><strong>ROI garantizado</strong> — Si el análisis previo no muestra ROI claro, no avanzamos</li>
+      </ul>
+
+      <hr class="separator" />
+
+      <h2>Preguntas Frecuentes sobre Visión Artificial Industrial</h2>
+
+      <div class="faq-item">
+        <h3>¿Qué es la visión artificial para control de calidad industrial?</h3>
+        <p>Es un sistema que combina cámaras de alta resolución con algoritmos de Deep Learning para inspeccionar productos en tiempo real durante la fabricación, detectando defectos con precisión superior al 99% a velocidades imposibles para la inspección humana.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Qué tipos de defectos puede detectar?</h3>
+        <p>Grietas, poros, rayaduras, manchas y decoloración en superficies; desviaciones dimensionales de micras; piezas mal ensambladas o ausentes; contaminantes en alimentos; errores de etiquetado. El sistema aprende de tus propias piezas defectuosas, no de un catálogo genérico.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Cuánto cuesta implementar visión artificial?</h3>
+        <p>Desde 15.000€ para una estación de inspección específica. El precio varía según la complejidad del defecto, la velocidad de línea y el número de estaciones. Realizamos análisis gratuito con estimación de ROI antes de cualquier propuesta.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Se puede integrar con mi línea actual sin pararla?</h3>
+        <p>Sí. La instalación física se realiza en paradas programadas de mantenimiento. El software se conecta a PLCs y SCADA existentes. Implementamos de forma modular: primero una estación piloto, validamos resultados y después escalamos.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Cuál es el ROI típico?</h3>
+        <p>Entre 12 y 24 meses en la mayoría de casos. En sectores con alto valor de producto o penalizaciones por defecto (automoción, farmacia), el payback puede ser inferior a 12 meses. Los ahorros vienen de reducción de mermas, eliminación de inspección manual y reducción de reclamaciones.</p>
+      </div>
+
+      <div class="cta-box">
+        <h2>¿Cuánto te cuesta hoy un defecto que se escapa?</h2>
+        <p>Analizamos tu línea de producción, identificamos dónde la visión artificial genera mayor impacto y te entregamos una estimación de ROI real. Sin coste, sin compromiso.</p>
+        <a href="https://sastreai.es/#contacto" class="btn">Solicitar análisis gratuito</a>
+      </div>
+
+    </article>
+  </div>
+
+  <footer>
+    <p>© 2026 <a href="https://sastreai.es">Sastre AI</a> · <a href="mailto:sastre@sastreai.es">sastre@sastreai.es</a> · <a href="https://sastreai.es/blog/">Blog</a></p>
+  </footer>
+</body>
+</html>
