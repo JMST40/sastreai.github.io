@@ -13,6 +13,8 @@
     gtag('config', 'G-S1ZVHJBTGQ');
   </script>
   <meta name="description" content="Transformamos negocios del sector industrial mediante automatización inteligente y soluciones 100% a medida." />
+  <link rel="alternate" hreflang="es" href="https://sastreai.es/" />
+  <link rel="alternate" hreflang="en" href="https://sastreai.es/?lang=en" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -133,6 +135,38 @@
     }
     .btn-ghost:hover { background: var(--card-hover); border-color: var(--pink); }
     .btn-ghost:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
+
+    /* ─── Language Switcher ──────────────────────────────────────────── */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+    .lang-btn {
+      background: none;
+      border: none;
+      color: var(--white-dim);
+      cursor: pointer;
+      padding: 4px 7px;
+      border-radius: 3px;
+      font-family: var(--font-b);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      transition: color 0.2s, background 0.2s;
+      line-height: 1;
+    }
+    .lang-btn.active { color: var(--pink-light); }
+    .lang-btn:hover { color: var(--pink-light); }
+    .lang-btn:focus-visible { outline: 2px solid var(--pink); outline-offset: 2px; border-radius: 2px; }
+    .lang-sep { color: var(--border-strong); font-size: 0.75rem; user-select: none; }
+    .lang-switcher-mobile {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
 
     /* ─── Navbar ────────────────────────────────────────────────────── */
     .navbar {
@@ -559,25 +593,31 @@
 </head>
 <body>
 
-  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <a class="skip-link" href="#main" data-i18n="skip_link">Saltar al contenido</a>
 
   <!-- ── Navbar ───────────────────────────────────────────────────── -->
   <header role="banner">
-    <nav class="navbar" aria-label="Navegación principal">
+    <nav class="navbar" data-i18n-label="nav_aria" aria-label="Navegación principal">
       <div class="navbar__inner">
         <a class="navbar__logo" href="#" aria-label="Sastre AI — Inicio">
           <img src="Logos/secundario transparente rosa.png" alt="Sastre AI" />
         </a>
         <ul class="navbar__links" role="list">
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#filosofia">Nosotros</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-          <li><a href="/blog/">Blog</a></li>
+          <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
+          <li><a href="#filosofia" data-i18n="nav_about">Nosotros</a></li>
+          <li><a href="#contacto" data-i18n="nav_contact">Contacto</a></li>
           <li>
-            <a href="#contacto" class="btn-primary navbar__cta" aria-label="Hablar con Sastre AI">¿Hablamos?</a>
+            <div class="lang-switcher" aria-label="Language / Idioma">
+              <button class="lang-btn active" id="btn-es" onclick="setLanguage('es')">ES</button>
+              <span class="lang-sep" aria-hidden="true">|</span>
+              <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
+            </div>
+          </li>
+          <li>
+            <a href="#contacto" class="btn-primary navbar__cta" data-i18n="nav_cta">¿Hablamos?</a>
           </li>
         </ul>
-        <button class="navbar__hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" id="hamburger-btn">
+        <button class="navbar__hamburger" data-i18n-label="nav_hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" id="hamburger-btn">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <rect y="3"  width="20" height="2" rx="1" fill="currentColor"/>
             <rect y="9"  width="20" height="2" rx="1" fill="currentColor"/>
@@ -585,12 +625,16 @@
           </svg>
         </button>
       </div>
-      <div class="navbar__mobile-menu" id="mobile-menu" role="menu" aria-label="Menú móvil">
-        <a href="#servicios" role="menuitem">Servicios</a>
-        <a href="#filosofia" role="menuitem">Nosotros</a>
-        <a href="#contacto" role="menuitem">Contacto</a>
-        <a href="/blog/" role="menuitem">Blog</a>
-        <a href="#contacto" class="btn-primary" role="menuitem" style="text-align:center;">¿Hablamos?</a>
+      <div class="navbar__mobile-menu" id="mobile-menu" role="menu" data-i18n-label="mobile_menu_aria" aria-label="Menú móvil">
+        <div class="lang-switcher-mobile" aria-label="Language / Idioma">
+          <button class="lang-btn active" id="btn-es-mobile" onclick="setLanguage('es')">ES</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button class="lang-btn" id="btn-en-mobile" onclick="setLanguage('en')">EN</button>
+        </div>
+        <a href="#servicios" role="menuitem" data-i18n="nav_services">Servicios</a>
+        <a href="#filosofia" role="menuitem" data-i18n="nav_about">Nosotros</a>
+        <a href="#contacto" role="menuitem" data-i18n="nav_contact">Contacto</a>
+        <a href="#contacto" class="btn-primary" role="menuitem" style="text-align:center;" data-i18n="nav_cta">¿Hablamos?</a>
       </div>
     </nav>
   </header>
@@ -598,25 +642,25 @@
   <main id="main">
 
     <!-- ── Hero ──────────────────────────────────────────────────────── -->
-    <section class="hero" aria-label="Presentación">
+    <section class="hero" data-i18n-label="hero_aria" aria-label="Presentación">
       <div class="container">
         <div class="hero__inner">
           <div>
             <div class="hero__badge reveal">
               <span aria-hidden="true"></span>
-              Inteligencia Artificial Aplicada
+              <span data-i18n="hero_badge">Inteligencia Artificial Aplicada</span>
             </div>
-            <h1 class="hero__title reveal">
+            <h1 class="hero__title reveal" data-i18n-html="hero_title">
               Tu empresa.<br />
               <span class="gradient-text">Potenciada por IA.</span>
             </h1>
-            <p class="hero__subtitle reveal">Automatización · Innovación · Resultados</p>
-            <p class="hero__desc reveal">
+            <p class="hero__subtitle reveal" data-i18n="hero_subtitle">Automatización · Innovación · Resultados</p>
+            <p class="hero__desc reveal" data-i18n="hero_desc">
               Transformamos negocios del sector industrial mediante automatización inteligente y soluciones 100% a medida. Sin tecnología genérica: soluciones que funcionan desde el primer día.
             </p>
             <div class="hero__actions reveal">
-              <a href="#contacto" class="btn-primary">¿Hablamos?</a>
-              <a href="#servicios" class="btn-ghost">Ver servicios</a>
+              <a href="#contacto" class="btn-primary" data-i18n="hero_cta">¿Hablamos?</a>
+              <a href="#servicios" class="btn-ghost" data-i18n="hero_services">Ver servicios</a>
             </div>
           </div>
           <div class="hero__visual reveal" aria-hidden="true">
@@ -641,24 +685,24 @@
     <hr class="separator" />
 
     <!-- ── Stats ─────────────────────────────────────────────────────── -->
-    <section class="stats" aria-label="Métricas clave">
+    <section class="stats" data-i18n-label="stats_aria" aria-label="Métricas clave">
       <div class="container">
         <div class="stats__grid reveal">
           <div class="stats__item">
             <div class="stats__value gradient-text">80%</div>
-            <div class="stats__label">Reducción de tareas manuales</div>
+            <div class="stats__label" data-i18n="stats_label1">Reducción de tareas manuales</div>
           </div>
           <div class="stats__item">
             <div class="stats__value gradient-text">24/7</div>
-            <div class="stats__label">Sistemas activos</div>
+            <div class="stats__label" data-i18n="stats_label2">Sistemas activos</div>
           </div>
           <div class="stats__item">
             <div class="stats__value gradient-text">100%</div>
-            <div class="stats__label">Solución a medida</div>
+            <div class="stats__label" data-i18n="stats_label3">Solución a medida</div>
           </div>
           <div class="stats__item">
             <div class="stats__value gradient-text">ROI</div>
-            <div class="stats__label">Medible desde el día 1</div>
+            <div class="stats__label" data-i18n="stats_label4">Medible desde el día 1</div>
           </div>
         </div>
       </div>
@@ -667,12 +711,12 @@
     <hr class="separator" />
 
     <!-- ── Services ──────────────────────────────────────────────────── -->
-    <section class="section" id="servicios" aria-label="Servicios">
+    <section class="section" id="servicios" data-i18n-label="services_aria" aria-label="Servicios">
       <div class="container">
         <div class="section__head reveal">
-          <p class="section__eyebrow">Lo que hacemos</p>
-          <h2 class="section__title">Soluciones diseñadas<br /><span class="gradient-text">para tu industria</span></h2>
-          <p class="section__subtitle">Cada proyecto parte de un análisis real de tu operativa. Identificamos dónde la IA genera impacto y entregamos una solución que funciona.</p>
+          <p class="section__eyebrow" data-i18n="services_eyebrow">Lo que hacemos</p>
+          <h2 class="section__title" data-i18n-html="services_title">Soluciones diseñadas<br /><span class="gradient-text">para tu industria</span></h2>
+          <p class="section__subtitle" data-i18n="services_subtitle">Cada proyecto parte de un análisis real de tu operativa. Identificamos dónde la IA genera impacto y entregamos una solución que funciona.</p>
         </div>
         <div class="services__grid">
 
@@ -680,48 +724,48 @@
             <div class="service-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             </div>
-            <h3 class="service-card__title">Automatización de Procesos</h3>
-            <p class="service-card__desc">Flujos automáticos que ahorran horas diarias y eliminan el error humano en tus operaciones repetitivas.</p>
+            <h3 class="service-card__title" data-i18n="s1_title">Automatización de Procesos</h3>
+            <p class="service-card__desc" data-i18n="s1_desc">Flujos automáticos que ahorran horas diarias y eliminan el error humano en tus operaciones repetitivas.</p>
           </article>
 
           <article class="service-card reveal">
             <div class="service-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
             </div>
-            <h3 class="service-card__title">Agentes y Asistentes IA</h3>
-            <p class="service-card__desc">Asistentes entrenados específicamente para tu negocio: atención, gestión interna y soporte operativo.</p>
+            <h3 class="service-card__title" data-i18n="s2_title">Agentes y Asistentes IA</h3>
+            <p class="service-card__desc" data-i18n="s2_desc">Asistentes entrenados específicamente para tu negocio: atención, gestión interna y soporte operativo.</p>
           </article>
 
           <article class="service-card reveal">
             <div class="service-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
             </div>
-            <h3 class="service-card__title">Visión Artificial</h3>
-            <p class="service-card__desc">Control de calidad y detección de defectos en tiempo real en líneas de producción industrial.</p>
+            <h3 class="service-card__title" data-i18n="s3_title">Visión Artificial</h3>
+            <p class="service-card__desc" data-i18n="s3_desc">Control de calidad y detección de defectos en tiempo real en líneas de producción industrial.</p>
           </article>
 
           <article class="service-card reveal">
             <div class="service-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 4-4"/></svg>
             </div>
-            <h3 class="service-card__title">Datos e Informes en Tiempo Real</h3>
-            <p class="service-card__desc">Dashboards automáticos para tomar decisiones basadas en datos, no en intuición. Toda tu operativa visible al instante.</p>
+            <h3 class="service-card__title" data-i18n="s4_title">Datos e Informes en Tiempo Real</h3>
+            <p class="service-card__desc" data-i18n="s4_desc">Dashboards automáticos para tomar decisiones basadas en datos, no en intuición. Toda tu operativa visible al instante.</p>
           </article>
 
           <article class="service-card reveal">
             <div class="service-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
             </div>
-            <h3 class="service-card__title">Software y Apps a Medida</h3>
-            <p class="service-card__desc">Aplicaciones con IA integrada construidas exactamente para lo que tu empresa necesita, sin funcionalidades innecesarias.</p>
+            <h3 class="service-card__title" data-i18n="s5_title">Software y Apps a Medida</h3>
+            <p class="service-card__desc" data-i18n="s5_desc">Aplicaciones con IA integrada construidas exactamente para lo que tu empresa necesita, sin funcionalidades innecesarias.</p>
           </article>
 
           <article class="service-card reveal">
             <div class="service-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="12" r="3"/><circle cx="16" cy="6" r="3"/><circle cx="16" cy="18" r="3"/><path d="M11 10.5l2-1.5M11 13.5l2 1.5"/></svg>
             </div>
-            <h3 class="service-card__title">Integración de Sistemas</h3>
-            <p class="service-card__desc">Conexión de tu ERP, CRM y maquinaria existente con IA sin interrumpir la operativa ni reemplazar lo que ya funciona.</p>
+            <h3 class="service-card__title" data-i18n="s6_title">Integración de Sistemas</h3>
+            <p class="service-card__desc" data-i18n="s6_desc">Conexión de tu ERP, CRM y maquinaria existente con IA sin interrumpir la operativa ni reemplazar lo que ya funciona.</p>
           </article>
 
         </div>
@@ -731,32 +775,32 @@
     <hr class="separator" />
 
     <!-- ── Philosophy ─────────────────────────────────────────────────── -->
-    <section class="section philosophy" id="filosofia" aria-label="Nuestra filosofía">
+    <section class="section philosophy" id="filosofia" data-i18n-label="phil_section_aria" aria-label="Nuestra filosofía">
       <div class="container">
         <div class="philosophy__inner">
           <div class="reveal">
-            <p class="section__eyebrow">Nuestra filosofía</p>
-            <h2 class="section__title">No vendemos<br /><span class="gradient-text">tecnología por vender</span></h2>
-            <blockquote class="philosophy__quote">
+            <p class="section__eyebrow" data-i18n="phil_eyebrow">Nuestra filosofía</p>
+            <h2 class="section__title" data-i18n-html="phil_title">No vendemos<br /><span class="gradient-text">tecnología por vender</span></h2>
+            <blockquote class="philosophy__quote" data-i18n="phil_quote">
               "Analizamos tu operativa, identificamos dónde la IA genera impacto real y entregamos soluciones que funcionan desde el primer día."
             </blockquote>
           </div>
-          <ul class="philosophy__points reveal" aria-label="Nuestros valores">
+          <ul class="philosophy__points reveal" data-i18n-label="phil_aria" aria-label="Nuestros valores">
             <li class="philosophy__point">
               <div class="philosophy__dot" aria-hidden="true"></div>
-              <p class="philosophy__point-text"><strong>Premium y especializado.</strong> Trabajamos en profundidad con cada cliente, no escalamos con soluciones genéricas.</p>
+              <p class="philosophy__point-text" data-i18n-html="phil_p1"><strong>Premium y especializado.</strong> Trabajamos en profundidad con cada cliente, no escalamos con soluciones genéricas.</p>
             </li>
             <li class="philosophy__point">
               <div class="philosophy__dot" aria-hidden="true"></div>
-              <p class="philosophy__point-text"><strong>Resultados medibles.</strong> Cada proyecto incluye métricas de impacto desde el arranque. Sin humo, sin promesas vacías.</p>
+              <p class="philosophy__point-text" data-i18n-html="phil_p2"><strong>Resultados medibles.</strong> Cada proyecto incluye métricas de impacto desde el arranque. Sin humo, sin promesas vacías.</p>
             </li>
             <li class="philosophy__point">
               <div class="philosophy__dot" aria-hidden="true"></div>
-              <p class="philosophy__point-text"><strong>Sector industrial en el ADN.</strong> Fabricación, producción, logística y operaciones: es nuestro entorno natural.</p>
+              <p class="philosophy__point-text" data-i18n-html="phil_p3"><strong>Sector industrial en el ADN.</strong> Fabricación, producción, logística y operaciones: es nuestro entorno natural.</p>
             </li>
             <li class="philosophy__point">
               <div class="philosophy__dot" aria-hidden="true"></div>
-              <p class="philosophy__point-text"><strong>Sin interrupciones.</strong> Integramos la IA en lo que ya tienes. Tu operativa no se para, se potencia.</p>
+              <p class="philosophy__point-text" data-i18n-html="phil_p4"><strong>Sin interrupciones.</strong> Integramos la IA en lo que ya tienes. Tu operativa no se para, se potencia.</p>
             </li>
           </ul>
         </div>
@@ -766,12 +810,12 @@
     <hr class="separator" />
 
     <!-- ── Contact ────────────────────────────────────────────────────── -->
-    <section class="section" id="contacto" aria-label="Contacto">
+    <section class="section" id="contacto" data-i18n-label="contact_aria" aria-label="Contacto">
       <div class="container">
         <div class="section__head reveal" style="text-align:center; max-width:560px; margin-left:auto; margin-right:auto;">
-          <p class="section__eyebrow">Hablemos</p>
-          <h2 class="section__title">¿Listo para transformar<br /><span class="gradient-text">tu empresa con IA?</span></h2>
-          <p class="section__subtitle" style="margin:0 auto;">Cuéntanos tu reto. Analizamos si hay fit real y te decimos con honestidad qué impacto puede generar la IA en tu caso.</p>
+          <p class="section__eyebrow" data-i18n="contact_eyebrow">Hablemos</p>
+          <h2 class="section__title" data-i18n-html="contact_title">¿Listo para transformar<br /><span class="gradient-text">tu empresa con IA?</span></h2>
+          <p class="section__subtitle" style="margin:0 auto;" data-i18n="contact_subtitle">Cuéntanos tu reto. Analizamos si hay fit real y te decimos con honestidad qué impacto puede generar la IA en tu caso.</p>
         </div>
         <div class="contact__grid reveal">
           <div class="contact__info">
@@ -780,7 +824,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
               </div>
               <div>
-                <p class="contact__item-label">Teléfono</p>
+                <p class="contact__item-label" data-i18n="contact_phone">Teléfono</p>
                 <a class="contact__item-value" href="tel:+34654061324">+34 654 06 13 24</a>
               </div>
             </div>
@@ -789,7 +833,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </div>
               <div>
-                <p class="contact__item-label">Email</p>
+                <p class="contact__item-label" data-i18n="contact_email">Email</p>
                 <a class="contact__item-value" href="mailto:sastre@sastreai.es">sastre@sastreai.es</a>
               </div>
             </div>
@@ -798,16 +842,16 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
               </div>
               <div>
-                <p class="contact__item-label">Web</p>
+                <p class="contact__item-label" data-i18n="contact_web">Web</p>
                 <a class="contact__item-value" href="https://sastreai.es" target="_blank" rel="noopener noreferrer">sastreai.es</a>
               </div>
             </div>
           </div>
           <div class="contact__cta-box">
-            <h3>¿Hablamos?</h3>
-            <p>Sin compromiso. En 30 minutos sabrás si la IA puede transformar tu negocio y cómo.</p>
+            <h3 data-i18n="contact_cta_h3">¿Hablamos?</h3>
+            <p data-i18n="contact_cta_p">Sin compromiso. En 30 minutos sabrás si la IA puede transformar tu negocio y cómo.</p>
             <a href="mailto:sastre@sastreai.es" class="btn-primary" style="width:100%; justify-content:center;">
-              Escribir a Sastre AI
+              <span data-i18n="contact_cta_btn">Escribir a Sastre AI</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
@@ -825,13 +869,179 @@
         <a href="#" aria-label="Sastre AI — Volver al inicio">
           <img src="Logos/secundario transparente rosa.png" alt="Sastre AI" style="height:28px;" />
         </a>
-        <p class="footer__copy">© 2025 Sastre AI. Todos los derechos reservados.</p>
-        <p class="footer__tagline">Inteligencia Artificial Aplicada</p>
+        <p class="footer__copy" data-i18n="footer_copy">© 2025 Sastre AI. Todos los derechos reservados.</p>
+        <p class="footer__tagline" data-i18n="footer_tagline">Inteligencia Artificial Aplicada</p>
       </div>
     </div>
   </footer>
 
   <script>
+    // ── Translations ─────────────────────────────────────────────────
+    const i18n = {
+      es: {
+        page_title:        'Sastre AI — Inteligencia Artificial Aplicada',
+        page_desc:         'Transformamos negocios del sector industrial mediante automatización inteligente y soluciones 100% a medida.',
+        skip_link:         'Saltar al contenido',
+        nav_aria:          'Navegación principal',
+        nav_services:      'Servicios',
+        nav_about:         'Nosotros',
+        nav_contact:       'Contacto',
+        nav_cta:           '¿Hablamos?',
+        nav_hamburger:     'Abrir menú',
+        mobile_menu_aria:  'Menú móvil',
+        hero_aria:         'Presentación',
+        hero_badge:        'Inteligencia Artificial Aplicada',
+        hero_title:        'Tu empresa.<br /><span class="gradient-text">Potenciada por IA.</span>',
+        hero_subtitle:     'Automatización · Innovación · Resultados',
+        hero_desc:         'Transformamos negocios del sector industrial mediante automatización inteligente y soluciones 100% a medida. Sin tecnología genérica: soluciones que funcionan desde el primer día.',
+        hero_cta:          '¿Hablamos?',
+        hero_services:     'Ver servicios',
+        stats_aria:        'Métricas clave',
+        stats_label1:      'Reducción de tareas manuales',
+        stats_label2:      'Sistemas activos',
+        stats_label3:      'Solución a medida',
+        stats_label4:      'Medible desde el día 1',
+        services_aria:     'Servicios',
+        services_eyebrow:  'Lo que hacemos',
+        services_title:    'Soluciones diseñadas<br /><span class="gradient-text">para tu industria</span>',
+        services_subtitle: 'Cada proyecto parte de un análisis real de tu operativa. Identificamos dónde la IA genera impacto y entregamos una solución que funciona.',
+        s1_title:          'Automatización de Procesos',
+        s1_desc:           'Flujos automáticos que ahorran horas diarias y eliminan el error humano en tus operaciones repetitivas.',
+        s2_title:          'Agentes y Asistentes IA',
+        s2_desc:           'Asistentes entrenados específicamente para tu negocio: atención, gestión interna y soporte operativo.',
+        s3_title:          'Visión Artificial',
+        s3_desc:           'Control de calidad y detección de defectos en tiempo real en líneas de producción industrial.',
+        s4_title:          'Datos e Informes en Tiempo Real',
+        s4_desc:           'Dashboards automáticos para tomar decisiones basadas en datos, no en intuición. Toda tu operativa visible al instante.',
+        s5_title:          'Software y Apps a Medida',
+        s5_desc:           'Aplicaciones con IA integrada construidas exactamente para lo que tu empresa necesita, sin funcionalidades innecesarias.',
+        s6_title:          'Integración de Sistemas',
+        s6_desc:           'Conexión de tu ERP, CRM y maquinaria existente con IA sin interrumpir la operativa ni reemplazar lo que ya funciona.',
+        phil_section_aria: 'Nuestra filosofía',
+        phil_eyebrow:      'Nuestra filosofía',
+        phil_title:        'No vendemos<br /><span class="gradient-text">tecnología por vender</span>',
+        phil_quote:        '"Analizamos tu operativa, identificamos dónde la IA genera impacto real y entregamos soluciones que funcionan desde el primer día."',
+        phil_aria:         'Nuestros valores',
+        phil_p1:           '<strong>Premium y especializado.</strong> Trabajamos en profundidad con cada cliente, no escalamos con soluciones genéricas.',
+        phil_p2:           '<strong>Resultados medibles.</strong> Cada proyecto incluye métricas de impacto desde el arranque. Sin humo, sin promesas vacías.',
+        phil_p3:           '<strong>Sector industrial en el ADN.</strong> Fabricación, producción, logística y operaciones: es nuestro entorno natural.',
+        phil_p4:           '<strong>Sin interrupciones.</strong> Integramos la IA en lo que ya tienes. Tu operativa no se para, se potencia.',
+        contact_aria:      'Contacto',
+        contact_eyebrow:   'Hablemos',
+        contact_title:     '¿Listo para transformar<br /><span class="gradient-text">tu empresa con IA?</span>',
+        contact_subtitle:  'Cuéntanos tu reto. Analizamos si hay fit real y te decimos con honestidad qué impacto puede generar la IA en tu caso.',
+        contact_phone:     'Teléfono',
+        contact_email:     'Email',
+        contact_web:       'Web',
+        contact_cta_h3:    '¿Hablamos?',
+        contact_cta_p:     'Sin compromiso. En 30 minutos sabrás si la IA puede transformar tu negocio y cómo.',
+        contact_cta_btn:   'Escribir a Sastre AI',
+        footer_copy:       '© 2025 Sastre AI. Todos los derechos reservados.',
+        footer_tagline:    'Inteligencia Artificial Aplicada',
+      },
+      en: {
+        page_title:        'Sastre AI — Applied Artificial Intelligence',
+        page_desc:         'We transform industrial businesses through intelligent automation and 100% custom-built solutions.',
+        skip_link:         'Skip to content',
+        nav_aria:          'Main navigation',
+        nav_services:      'Services',
+        nav_about:         'About',
+        nav_contact:       'Contact',
+        nav_cta:           "Let's talk",
+        nav_hamburger:     'Open menu',
+        mobile_menu_aria:  'Mobile menu',
+        hero_aria:         'Introduction',
+        hero_badge:        'Applied Artificial Intelligence',
+        hero_title:        'Your business.<br /><span class="gradient-text">Powered by AI.</span>',
+        hero_subtitle:     'Automation · Innovation · Results',
+        hero_desc:         'We transform industrial businesses through intelligent automation and 100% custom-built solutions. No generic technology: solutions that work from day one.',
+        hero_cta:          "Let's talk",
+        hero_services:     'View services',
+        stats_aria:        'Key metrics',
+        stats_label1:      'Reduction in manual tasks',
+        stats_label2:      'Active systems',
+        stats_label3:      'Custom-built solution',
+        stats_label4:      'Measurable from day 1',
+        services_aria:     'Services',
+        services_eyebrow:  'What we do',
+        services_title:    'Solutions designed<br /><span class="gradient-text">for your industry</span>',
+        services_subtitle: 'Every project starts with a real analysis of your operations. We identify where AI creates impact and deliver a solution that works.',
+        s1_title:          'Process Automation',
+        s1_desc:           'Automated workflows that save hours every day and eliminate human error in your repetitive operations.',
+        s2_title:          'AI Agents & Assistants',
+        s2_desc:           'Assistants trained specifically for your business: customer service, internal management, and operational support.',
+        s3_title:          'Computer Vision',
+        s3_desc:           'Real-time quality control and defect detection on industrial production lines.',
+        s4_title:          'Real-Time Data & Reports',
+        s4_desc:           "Automated dashboards to make data-driven decisions, not gut-feel ones. Your entire operation visible at a glance.",
+        s5_title:          'Custom Software & Apps',
+        s5_desc:           'AI-powered applications built exactly for what your company needs — no unnecessary features.',
+        s6_title:          'Systems Integration',
+        s6_desc:           'Connect your ERP, CRM, and existing machinery with AI — without disrupting operations or replacing what already works.',
+        phil_section_aria: 'Our philosophy',
+        phil_eyebrow:      'Our philosophy',
+        phil_title:        "We don't sell<br /><span class=\"gradient-text\">technology for the sake of it</span>",
+        phil_quote:        '"We analyse your operations, identify where AI creates real impact, and deliver solutions that work from day one."',
+        phil_aria:         'Our values',
+        phil_p1:           "<strong>Premium and specialised.</strong> We work in depth with each client — we don't scale with generic solutions.",
+        phil_p2:           '<strong>Measurable results.</strong> Every project includes impact metrics from the start. No smoke, no empty promises.',
+        phil_p3:           "<strong>Industrial DNA.</strong> Manufacturing, production, logistics and operations: it's our natural environment.",
+        phil_p4:           "<strong>Zero disruption.</strong> We integrate AI into what you already have. Your operations don't stop — they level up.",
+        contact_aria:      'Contact',
+        contact_eyebrow:   "Let's talk",
+        contact_title:     'Ready to transform<br /><span class="gradient-text">your business with AI?</span>',
+        contact_subtitle:  "Tell us your challenge. We'll analyse whether there's a real fit and honestly tell you what impact AI can generate in your case.",
+        contact_phone:     'Phone',
+        contact_email:     'Email',
+        contact_web:       'Web',
+        contact_cta_h3:    "Let's talk",
+        contact_cta_p:     "No commitment. In 30 minutes you'll know if AI can transform your business and how.",
+        contact_cta_btn:   'Write to Sastre AI',
+        footer_copy:       '© 2025 Sastre AI. All rights reserved.',
+        footer_tagline:    'Applied Artificial Intelligence',
+      }
+    };
+
+    function setLanguage(lang) {
+      const t = i18n[lang];
+      if (!t) return;
+
+      document.documentElement.lang = lang;
+      document.title = t.page_title;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', t.page_desc);
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.textContent = t[key];
+      });
+
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+
+      document.querySelectorAll('[data-i18n-label]').forEach(el => {
+        const key = el.getAttribute('data-i18n-label');
+        if (t[key] !== undefined) el.setAttribute('aria-label', t[key]);
+      });
+
+      ['btn-es', 'btn-en', 'btn-es-mobile', 'btn-en-mobile'].forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) btn.classList.toggle('active', btn.id.includes(lang));
+      });
+
+      localStorage.setItem('sastreai_lang', lang);
+    }
+
+    // ── Init language ─────────────────────────────────────────────────
+    (function () {
+      const urlLang = new URLSearchParams(window.location.search).get('lang');
+      const stored  = localStorage.getItem('sastreai_lang');
+      const lang    = (urlLang === 'en' || urlLang === 'es') ? urlLang : (stored || 'es');
+      setLanguage(lang);
+    })();
+
     // ── Mobile menu ──────────────────────────────────────────────────
     const btn  = document.getElementById('hamburger-btn');
     const menu = document.getElementById('mobile-menu');
