@@ -22,6 +22,7 @@
 - Teléfono: +34 654 06 13 24
 
 ## Artículos
+- [Digitalizar tu Fábrica con IA sin Parar Producción: Guía Práctica](https://sastreai.es/blog/digitalizacion-fabrica-con-ia-sin-parar-produccion/)
 - [Cuánto Ahorra una Empresa Industrial con IA en España](https://sastreai.es/blog/cuanto-ahorra-una-empresa-industrial-con-ia/)
 - [Integrar ERP con IA: Optimiza tu Industria con Sastre AI](https://sastreai.es/blog/integrar-erp-con-inteligencia-artificial/)
 - [Visión Artificial para Control de Calidad Industrial: Cero Defectos con IA](https://sastreai.es/blog/vision-artificial-control-calidad-industrial/)
