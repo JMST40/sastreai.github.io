@@ -22,6 +22,7 @@
 - Teléfono: +34 654 06 13 24
 
 ## Artículos
+- [IA para Reducir Tareas Manuales en Fábrica: Tu Guía Pyme](https://sastreai.es/blog/reducir-tareas-manuales-en-fabrica-con-ia/)
 - [Automatización con IA en Automoción: Impulsa tu Fábrica](https://sastreai.es/blog/automatizacion-con-ia-sector-automocion/)
 - [IA para Fabricación Metálica España | Sastre AI](https://sastreai.es/blog/ia-para-fabricacion-metalica-espana/)
 - [Inteligencia Artificial para Empresas de Alimentación: Guía Sectorial](https://sastreai.es/blog/inteligencia-artificial-empresas-alimentacion/)
