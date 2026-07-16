@@ -56,68 +56,26 @@
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --black: #000000; --pink: #ff1493; --pink-light: #ff69b4;
-      --white: #ffffff; --white-dim: rgba(255,255,255,0.65);
-      --card-bg: rgba(255,255,255,0.03); --border: rgba(255,20,147,0.2);
-      --font-h: 'Orbitron', sans-serif; --font-b: 'Exo 2', sans-serif;
-    }
-    html { scroll-behavior: smooth; }
-    body { background: var(--black); color: var(--white); font-family: var(--font-b); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
-    body::before { content:''; position:fixed; inset:0; background-image: linear-gradient(rgba(255,20,147,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(255,20,147,0.04) 1px,transparent 1px); background-size:22px 22px; pointer-events:none; z-index:0; }
-    body::after { content:''; position:fixed; inset:0; background: radial-gradient(ellipse 60% 50% at 95% 5%, rgba(255,20,147,0.12) 0%,transparent 70%), radial-gradient(ellipse 50% 40% at 5% 95%, rgba(255,20,147,0.10) 0%,transparent 70%); pointer-events:none; z-index:0; }
-    .container { max-width: 780px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
-    nav { padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,20,147,0.15); position: relative; z-index: 10; }
-    nav a.logo { font-family: var(--font-h); font-weight: 900; font-size: 1.1rem; color: var(--pink); text-decoration: none; letter-spacing: 2px; }
-    nav a.back { color: var(--white-dim); text-decoration: none; font-size: 0.9rem; transition: color .2s; }
-    nav a.back:hover { color: var(--pink); }
-    header { padding: 64px 0 48px; }
-    .breadcrumb { font-size: 0.8rem; color: var(--white-dim); margin-bottom: 20px; }
-    .breadcrumb a { color: var(--pink-light); text-decoration: none; }
-    .article-meta { font-size: 0.85rem; color: var(--white-dim); margin-top: 16px; }
-    h1 { font-family: var(--font-h); font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
-    h1 span { background: linear-gradient(90deg, var(--pink-light), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .separator { height: 1px; background: linear-gradient(90deg, transparent, var(--pink-light), var(--pink), transparent); border: none; margin: 40px 0; }
-    article h2 { font-family: var(--font-h); font-size: 1.2rem; font-weight: 700; color: var(--pink-light); margin: 48px 0 16px; }
-    article h3 { font-size: 1.05rem; font-weight: 600; color: var(--white); margin: 32px 0 12px; border-left: 3px solid var(--pink); padding-left: 12px; }
-    article p { color: var(--white-dim); margin-bottom: 18px; }
-    article strong { color: var(--white); }
-    article ul, article ol { color: var(--white-dim); padding-left: 24px; margin-bottom: 18px; }
-    article li { margin-bottom: 8px; }
-    .stat-block { background: var(--card-bg); border: 1px solid var(--border); border-left: 3px solid var(--pink); border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
-    .stat-block .number { font-family: var(--font-h); font-size: 2rem; color: var(--pink); font-weight: 900; }
-    .stat-block p { margin: 4px 0 0; font-size: 0.9rem; }
-    .faq-item { border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; margin-bottom: 12px; background: var(--card-bg); }
-    .faq-item h3 { border: none; padding: 0; margin: 0 0 10px; font-size: 1rem; color: var(--white); }
-    .faq-item p { margin: 0; font-size: 0.95rem; }
-    .cta-box { background: linear-gradient(135deg, rgba(255,20,147,0.1), rgba(255,105,180,0.05)); border: 1px solid var(--border); border-radius: 12px; padding: 40px; text-align: center; margin: 48px 0; }
-    .cta-box h2 { font-family: var(--font-h); font-size: 1.3rem; color: var(--white); margin-bottom: 12px; }
-    .cta-box p { color: var(--white-dim); margin-bottom: 24px; }
-    .btn { display: inline-block; background: linear-gradient(90deg, var(--pink-light), var(--pink)); color: var(--white); font-family: var(--font-h); font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; padding: 14px 32px; border-radius: 6px; text-decoration: none; transition: opacity .2s; }
-    .btn:hover { opacity: 0.85; }
-    footer { border-top: 1px solid rgba(255,20,147,0.15); padding: 32px 24px; text-align: center; color: var(--white-dim); font-size: 0.85rem; position: relative; z-index: 1; margin-top: 80px; }
-    footer a { color: var(--pink-light); text-decoration: none; }
-  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
 </head>
 <body>
-  <nav>
-    <a class="logo" href="https://sastreai.es">SASTRE AI</a>
+  <nav class="blog-nav">
+    <a class="logo" href="https://sastreai.es"><img src="/Logos/secundario transparente rosa.png" alt="Sastre AI" /></a>
     <a class="back" href="https://sastreai.es/blog/">← Blog</a>
   </nav>
 
-  <div class="container">
-    <header>
+  <div class="article-container">
+    <header class="article-head">
       <div class="breadcrumb"><a href="https://sastreai.es">Inicio</a> › <a href="https://sastreai.es/blog/">Blog</a> › Automoción IA</div>
-      <h1>Automatización con <span>IA en Automoción</span>: Impulsa tu Fábrica</h1>
+      <h1>Automatización con <span class="accent">IA en Automoción</span>: Impulsa tu Fábrica</h1>
       <p class="article-meta">Por Sastre AI · 6 de mayo de 2026 · 15 min de lectura</p>
     </header>
 
     <hr class="separator" />
 
-    <article>
+    <article class="post">
       <p>El sector automotriz español se enfrenta a una presión sin precedentes, marcada por la globalización de mercados, las exigencias de sostenibilidad, la escasez de talento cualificado y la necesidad constante de optimizar la eficiencia y la calidad de la producción. La supervivencia y el liderazgo en este entorno dependen, más que nunca, de la capacidad de adoptar nuevas tecnologías.</p>
       <p>En este contexto, la <strong>automatización con IA en el sector automoción</strong> se define como la integración estratégica de sistemas de Inteligencia Artificial en los procesos de fabricación y producción de vehículos y sus componentes. Esto va más allá de la robótica y la maquinaria controlada de forma tradicional, permitiendo que las máquinas y los sistemas no solo sigan instrucciones, sino que aprendan de los datos, se adapten a nuevas situaciones y tomen decisiones inteligentes en tiempo real para optimizar cada aspecto de la cadena de producción, desde el diseño hasta el ensamblaje final.</p>
       <p>Mientras la automatización tradicional ha sido la columna vertebral de la industria, la Inteligencia Artificial la está llevando a un nuevo nivel. Ya no se trata solo de robots que ejecutan tareas repetitivas, sino de sistemas que perciben, analizan, aprenden y actúan de manera autónoma, logrando niveles de precisión y eficiencia antes inalcanzables. En Sastre AI, entendemos los desafíos específicos de la fabricación automotriz en España. Somos tu socio estratégico para implementar soluciones de IA industrial a medida que garantizan un retorno de inversión (ROI) tangible y una integración sin fricciones en tu planta.</p>
@@ -284,11 +242,11 @@
     <div class="cta-box">
       <h2>¿Estás listo para llevar tu fábrica automotriz al siguiente nivel?</h2>
       <p>No dejes que los desafíos de implementación te detengan. En Sastre AI, estamos listos para ser tu guía experto en este viaje de transformación digital. Contacta con nosotros hoy mismo para una consulta gratuita y descubre cómo la IA industrial puede impulsar tu eficiencia y tu ROI.</p>
-      <a href="https://sastreai.es/#contacto" class="btn">HABLAMOS →</a>
+      <a href="https://sastreai.es/#contacto" class="btn btn-primary">¿Hablamos?</a>
     </div>
   </div>
 
-  <footer>
+  <footer class="article-footer">
     <p>© 2026 <a href="https://sastreai.es">Sastre AI</a> · <a href="mailto:sastre@sastreai.es">sastre@sastreai.es</a></p>
   </footer>
 </body>
