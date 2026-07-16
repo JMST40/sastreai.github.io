@@ -39,11 +39,12 @@
     <nav class="navbar" data-i18n-label="nav_aria" aria-label="Navegación principal">
       <div class="navbar__inner">
         <a class="navbar__logo" href="#" aria-label="Sastre AI - Inicio">
-          <img src="Logos/secundario transparente rosa.png" alt="Sastre AI" />
+          <img src="Logos/secundario degradado transparente.png" alt="Sastre AI" />
         </a>
         <ul class="navbar__links" role="list">
           <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
           <li><a href="#filosofia" data-i18n="nav_about">Nosotros</a></li>
+          <li><a href="#equipo" data-i18n="nav_team">Equipo</a></li>
           <li><a href="#contacto" data-i18n="nav_contact">Contacto</a></li>
           <li><a href="/blog/" data-i18n="nav_blog">Blog</a></li>
           <li>
@@ -66,13 +67,9 @@
         </button>
       </div>
       <div class="navbar__mobile-menu" id="mobile-menu" role="menu" data-i18n-label="mobile_menu_aria" aria-label="Menú móvil">
-        <div class="lang-switcher-mobile" aria-label="Language / Idioma">
-          <button class="lang-btn active" id="btn-es-mobile" onclick="setLanguage('es')">ES</button>
-          <span class="lang-sep" aria-hidden="true">|</span>
-          <button class="lang-btn" id="btn-en-mobile" onclick="setLanguage('en')">EN</button>
-        </div>
         <a href="#servicios" role="menuitem" data-i18n="nav_services">Servicios</a>
         <a href="#filosofia" role="menuitem" data-i18n="nav_about">Nosotros</a>
+        <a href="#equipo" role="menuitem" data-i18n="nav_team">Equipo</a>
         <a href="#contacto" role="menuitem" data-i18n="nav_contact">Contacto</a>
         <a href="/blog/" role="menuitem" data-i18n="nav_blog">Blog</a>
         <a href="#contacto" class="btn btn-primary" role="menuitem" style="text-align:center; justify-content:center;" data-i18n="nav_cta">¿Hablamos?</a>
@@ -84,6 +81,7 @@
 
     <!-- ── Hero ──────────────────────────────────────────────────────── -->
     <section class="hero" data-i18n-label="hero_aria" aria-label="Presentación">
+      <img class="hero__mark" src="Logos/icon-mark-degradado.png" alt="" aria-hidden="true" />
       <div class="container">
         <div class="hero__inner">
           <div>
@@ -138,7 +136,7 @@
     </section>
 
     <!-- ── Services ──────────────────────────────────────────────────── -->
-    <section class="section" id="servicios" data-i18n-label="services_aria" aria-label="Servicios">
+    <section class="section" id="servicios" data-i18n-label="services_aria" aria-label="Servicios" style="padding-bottom: 0;">
       <div class="container">
         <div class="section__head reveal">
           <h2 class="section__title" data-i18n="services_title">Soluciones diseñadas para tu industria</h2>
@@ -146,34 +144,48 @@
         </div>
 
         <div class="services__row-lg reveal">
-          <article class="service-tile service-tile--pattern-a">
+          <article class="service-tile service-tile--photo">
+            <img src="https://picsum.photos/id/950/900/700" alt="" aria-hidden="true" />
             <h3 class="service-tile__title" data-i18n="s1_title">Automatización de Procesos</h3>
             <p class="service-tile__desc" data-i18n="s1_desc">Flujos automáticos que ahorran horas diarias y eliminan el error humano en tus operaciones repetitivas.</p>
           </article>
-          <article class="service-tile service-tile--tint">
+          <article class="service-tile service-tile--photo">
+            <img src="https://picsum.photos/id/1078/900/700" alt="" aria-hidden="true" />
             <h3 class="service-tile__title" data-i18n="s2_title">Agentes y Asistentes IA</h3>
             <p class="service-tile__desc" data-i18n="s2_desc">Asistentes entrenados específicamente para tu negocio: atención, gestión interna y soporte operativo.</p>
           </article>
         </div>
 
         <div class="services__row-sm reveal">
-          <article class="service-tile service-tile--pattern-b">
+          <article class="service-tile service-tile--photo">
+            <img src="https://picsum.photos/id/870/700/560" alt="" aria-hidden="true" />
             <h3 class="service-tile__title" data-i18n="s3_title">Visión Artificial</h3>
             <p class="service-tile__desc" data-i18n="s3_desc">Control de calidad y detección de defectos en tiempo real en líneas de producción industrial.</p>
           </article>
-          <article class="service-tile service-tile--tint">
+          <article class="service-tile service-tile--photo">
+            <img src="https://picsum.photos/id/1075/700/560" alt="" aria-hidden="true" />
             <h3 class="service-tile__title" data-i18n="s4_title">Datos e Informes en Tiempo Real</h3>
             <p class="service-tile__desc" data-i18n="s4_desc">Dashboards automáticos para tomar decisiones basadas en datos, no en intuición.</p>
           </article>
-          <article class="service-tile">
+          <article class="service-tile service-tile--photo">
+            <img src="https://picsum.photos/id/1081/700/560" alt="" aria-hidden="true" />
             <h3 class="service-tile__title" data-i18n="s5_title">Software y Apps a Medida</h3>
             <p class="service-tile__desc" data-i18n="s5_desc">Aplicaciones con IA integrada construidas exactamente para lo que tu empresa necesita.</p>
           </article>
-          <article class="service-tile service-tile--tint">
+          <article class="service-tile service-tile--photo">
+            <img src="https://picsum.photos/id/233/700/560" alt="" aria-hidden="true" />
             <h3 class="service-tile__title" data-i18n="s6_title">Integración de Sistemas</h3>
             <p class="service-tile__desc" data-i18n="s6_desc">Conexión de tu ERP, CRM y maquinaria existente con IA sin interrumpir la operativa.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- ── Moment: full-bleed editorial photo band ──────────────────────── -->
+    <section class="moment reveal" aria-hidden="true">
+      <img src="https://picsum.photos/id/1076/1800/1000" alt="" />
+      <div class="container moment__inner">
+        <p class="moment__text" data-i18n="moment_text">La misma disciplina con la que se diseña una fábrica, aplicada a cada línea de código.</p>
       </div>
     </section>
 
@@ -207,6 +219,35 @@
       </div>
     </section>
 
+    <!-- ── Founder ────────────────────────────────────────────────────── -->
+    <section class="section founder" id="equipo" data-i18n-label="founder_aria" aria-label="Quién hay detrás de Sastre AI">
+      <div class="container">
+        <div class="founder__grid reveal">
+          <div class="founder__visual">
+            <div class="founder__frame">
+              <img
+                src="Jose Manuel Sastre/foto perfil blanco y negro.png"
+                data-i18n-label="founder_photo_alt"
+                alt="José Manuel Sastre, fundador de Sastre AI"
+              />
+            </div>
+          </div>
+          <div class="founder__content">
+            <h2 class="section__title" data-i18n="founder_title">Quién hay detrás de Sastre AI</h2>
+            <p class="founder__lead" data-i18n="founder_lead">Soy Ingeniero Industrial. Llevo más de seis años poniendo en marcha plantas de generación eléctrica en tres países, antes de fundar Sastre AI.</p>
+            <p class="founder__bio" data-i18n="founder_bio">
+              Soy Ingeniero Mecánico e Ingeniero Industrial por la Universidad Politécnica de Cartagena, con un MBA y un Máster en Inteligencia Artificial por la UNIR. He liderado la puesta en marcha de turbinas de gas y ciclo combinado para Siemens Energy y Uniper, sistemas de presión para submarinos de Navantia, y la gestión de mantenimiento integral de una de las principales terminales de regasificación de España para Enagás.
+            </p>
+            <ul class="founder__tags" role="list">
+              <li data-i18n="founder_tag1">Ingeniería Mecánica e Industrial</li>
+              <li data-i18n="founder_tag2">MBA</li>
+              <li data-i18n="founder_tag3">Máster en Inteligencia Artificial</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ── Contact ────────────────────────────────────────────────────── -->
     <section class="section" id="contacto" data-i18n-label="contact_aria" aria-label="Contacto">
       <div class="container">
@@ -229,7 +270,8 @@
               <a class="contact__row-value" href="https://sastreai.es" target="_blank" rel="noopener noreferrer">sastreai.es</a>
             </div>
           </div>
-          <div class="contact__panel">
+          <div class="contact__panel contact__panel--photo">
+            <img src="https://picsum.photos/id/1048/900/900" alt="" aria-hidden="true" />
             <p data-i18n="contact_panel_p">Cuéntanos tu reto en una llamada de 30 minutos. Sin compromiso, con una respuesta honesta sobre el impacto real que la IA puede tener en tu operativa.</p>
             <a href="mailto:sastre@sastreai.es" class="btn btn-primary">
               <span data-i18n="contact_cta_btn">¿Hablamos?</span>
@@ -247,11 +289,12 @@
     <div class="container">
       <div class="footer__inner">
         <a href="#" aria-label="Sastre AI - Volver al inicio" class="footer__logo">
-          <img src="Logos/secundario transparente rosa.png" alt="Sastre AI" />
+          <img src="Logos/secundario degradado transparente.png" alt="Sastre AI" />
         </a>
         <ul class="footer__links" role="list">
           <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
           <li><a href="#filosofia" data-i18n="nav_about">Nosotros</a></li>
+          <li><a href="#equipo" data-i18n="nav_team">Equipo</a></li>
           <li><a href="/blog/" data-i18n="nav_blog">Blog</a></li>
         </ul>
         <p class="footer__copy" data-i18n="footer_copy">© 2026 Sastre AI. Todos los derechos reservados.</p>
@@ -269,6 +312,7 @@
         nav_aria:          'Navegación principal',
         nav_services:      'Servicios',
         nav_about:         'Nosotros',
+        nav_team:          'Equipo',
         nav_contact:       'Contacto',
         nav_cta:           '¿Hablamos?',
         nav_blog:          'Blog',
@@ -299,6 +343,7 @@
         s5_desc:           'Aplicaciones con IA integrada construidas exactamente para lo que tu empresa necesita.',
         s6_title:          'Integración de Sistemas',
         s6_desc:           'Conexión de tu ERP, CRM y maquinaria existente con IA sin interrumpir la operativa.',
+        moment_text:       'La misma disciplina con la que se diseña una fábrica, aplicada a cada línea de código.',
         phil_section_aria: 'Nuestra filosofía',
         phil_title:        'No vendemos tecnología por vender',
         phil_quote:        'Analizamos tu operativa, identificamos dónde la IA genera impacto real y entregamos soluciones que funcionan desde el primer día.',
@@ -311,6 +356,14 @@
         phil_p3:           'Fabricación, producción, logística y operaciones: es nuestro entorno natural.',
         phil_p4_title:     'Sin interrupciones',
         phil_p4:           'Integramos la IA en lo que ya tienes. Tu operativa no se para, se potencia.',
+        founder_aria:      'Quién hay detrás de Sastre AI',
+        founder_title:     'Quién hay detrás de Sastre AI',
+        founder_lead:      'Soy Ingeniero Industrial. Llevo más de seis años poniendo en marcha plantas de generación eléctrica en tres países, antes de fundar Sastre AI.',
+        founder_bio:       'Soy Ingeniero Mecánico e Ingeniero Industrial por la Universidad Politécnica de Cartagena, con un MBA y un Máster en Inteligencia Artificial por la UNIR. He liderado la puesta en marcha de turbinas de gas y ciclo combinado para Siemens Energy y Uniper, sistemas de presión para submarinos de Navantia, y la gestión de mantenimiento integral de una de las principales terminales de regasificación de España para Enagás.',
+        founder_tag1:      'Ingeniería Mecánica e Industrial',
+        founder_tag2:      'MBA',
+        founder_tag3:      'Máster en Inteligencia Artificial',
+        founder_photo_alt: 'José Manuel Sastre, fundador de Sastre AI',
         contact_aria:      'Contacto',
         contact_title:     '¿Listo para transformar tu empresa con IA?',
         contact_subtitle:  'Cuéntanos tu reto. Analizamos si hay fit real y te decimos con honestidad qué impacto puede generar la IA en tu caso.',
@@ -328,6 +381,7 @@
         nav_aria:          'Main navigation',
         nav_services:      'Services',
         nav_about:         'About',
+        nav_team:          'Team',
         nav_contact:       'Contact',
         nav_cta:           "Let's talk",
         nav_blog:          'Blog',
@@ -358,6 +412,7 @@
         s5_desc:           'AI-powered applications built exactly for what your company needs.',
         s6_title:          'Systems Integration',
         s6_desc:           'Connect your ERP, CRM, and existing machinery with AI, without disrupting operations.',
+        moment_text:       'The same discipline used to design a factory, applied to every line of code.',
         phil_section_aria: 'Our philosophy',
         phil_title:        "We don't sell technology for the sake of it",
         phil_quote:        'We analyse your operations, identify where AI creates real impact, and deliver solutions that work from day one.',
@@ -370,6 +425,14 @@
         phil_p3:           "Manufacturing, production, logistics and operations: it's our natural environment.",
         phil_p4_title:     'Zero disruption',
         phil_p4:           "We integrate AI into what you already have. Your operations don't stop, they level up.",
+        founder_aria:      "Who's behind Sastre AI",
+        founder_title:     "Who's behind Sastre AI",
+        founder_lead:      "I'm an Industrial Engineer. I spent over six years commissioning power generation plants in three countries before founding Sastre AI.",
+        founder_bio:       "I hold a degree in Mechanical Engineering and a Master's in Industrial Engineering from the Universidad Politécnica de Cartagena, an MBA, and a Master's in Artificial Intelligence from UNIR. I've led the commissioning of gas and combined-cycle turbines for Siemens Energy and Uniper, pressure systems for Navantia submarines, and the integral maintenance management of one of Spain's main LNG regasification terminals for Enagás.",
+        founder_tag1:      'Mechanical & Industrial Engineering',
+        founder_tag2:      'MBA',
+        founder_tag3:      "Master's in Artificial Intelligence",
+        founder_photo_alt: 'José Manuel Sastre, founder of Sastre AI',
         contact_aria:      'Contact',
         contact_title:     'Ready to transform your business with AI?',
         contact_subtitle:  "Tell us your challenge. We'll analyse whether there's a real fit and honestly tell you what impact AI can generate in your case.",
@@ -404,6 +467,11 @@
       document.querySelectorAll('[data-i18n-label]').forEach(el => {
         const key = el.getAttribute('data-i18n-label');
         if (t[key] !== undefined) el.setAttribute('aria-label', t[key]);
+      });
+
+      document.querySelectorAll('img[data-i18n-label]').forEach(el => {
+        const key = el.getAttribute('data-i18n-label');
+        if (t[key] !== undefined) el.setAttribute('alt', t[key]);
       });
 
       ['btn-es', 'btn-en', 'btn-es-mobile', 'btn-en-mobile'].forEach(id => {
