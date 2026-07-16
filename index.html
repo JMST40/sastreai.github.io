@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sastre AI — Inteligencia Artificial Aplicada</title>
+  <title>Sastre AI - Inteligencia Artificial Aplicada</title>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1ZVHJBTGQ"></script>
   <script>
@@ -13,588 +13,22 @@
     gtag('config', 'G-S1ZVHJBTGQ');
   </script>
   <meta name="description" content="Transformamos negocios del sector industrial mediante automatización inteligente y soluciones 100% a medida." />
+  <link rel="canonical" href="https://sastreai.es/" />
   <link rel="alternate" hreflang="es" href="https://sastreai.es/" />
   <link rel="alternate" hreflang="en" href="https://sastreai.es/?lang=en" />
+  <meta property="og:title" content="Sastre AI - Inteligencia Artificial Aplicada" />
+  <meta property="og:description" content="Transformamos negocios del sector industrial mediante automatización inteligente y soluciones 100% a medida." />
+  <meta property="og:url" content="https://sastreai.es/" />
+  <meta property="og:type" content="website" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    /* ─── Reset & Base ─────────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    :root {
-      --black:      #000000;
-      --pink:       #ff1493;
-      --pink-light: #ff69b4;
-      --white:      #ffffff;
-      --white-dim:  rgba(255,255,255,0.65);
-      --card-bg:    rgba(255,255,255,0.03);
-      --card-hover: rgba(255,255,255,0.06);
-      --border:     rgba(255,20,147,0.2);
-      --border-strong: rgba(255,20,147,0.4);
-      --glow-soft:  rgba(255,20,147,0.08);
-      --font-h:     'Orbitron', sans-serif;
-      --font-b:     'Exo 2', sans-serif;
-    }
-
-    body {
-      background-color: var(--black);
-      color: var(--white);
-      font-family: var(--font-b);
-      font-size: 16px;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* ─── Background: Grid + Glows ─────────────────────────────────── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,20,147,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,20,147,0.04) 1px, transparent 1px);
-      background-size: 22px 22px;
-      pointer-events: none;
-      z-index: 0;
-    }
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 95% 5%,  rgba(255,20,147,0.12) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 40% at 5%  95%, rgba(255,20,147,0.10) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* ─── Helpers ───────────────────────────────────────────────────── */
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 24px;
-      position: relative;
-      z-index: 1;
-    }
-    .gradient-text {
-      background: linear-gradient(90deg, var(--pink-light), var(--pink));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .separator {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--pink-light), var(--pink), transparent);
-      border: none;
-      margin: 0;
-    }
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 32px;
-      background: linear-gradient(135deg, var(--pink-light), var(--pink));
-      color: var(--white);
-      font-family: var(--font-b);
-      font-size: 1rem;
-      font-weight: 700;
-      text-decoration: none;
-      border-radius: 4px;
-      border: none;
-      cursor: pointer;
-      transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
-      letter-spacing: 0.04em;
-    }
-    .btn-primary:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
-      box-shadow: 0 8px 28px rgba(255,20,147,0.4);
-    }
-    .btn-primary:focus-visible {
-      outline: 2px solid var(--pink);
-      outline-offset: 3px;
-    }
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 32px;
-      background: transparent;
-      color: var(--white);
-      font-family: var(--font-b);
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      border: 1px solid var(--border-strong);
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background 0.2s, border-color 0.2s;
-      letter-spacing: 0.04em;
-    }
-    .btn-ghost:hover { background: var(--card-hover); border-color: var(--pink); }
-    .btn-ghost:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
-
-    /* ─── Language Switcher ──────────────────────────────────────────── */
-    .lang-switcher {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-    }
-    .lang-btn {
-      background: none;
-      border: none;
-      color: var(--white-dim);
-      cursor: pointer;
-      padding: 4px 7px;
-      border-radius: 3px;
-      font-family: var(--font-b);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      transition: color 0.2s, background 0.2s;
-      line-height: 1;
-    }
-    .lang-btn.active { color: var(--pink-light); }
-    .lang-btn:hover { color: var(--pink-light); }
-    .lang-btn:focus-visible { outline: 2px solid var(--pink); outline-offset: 2px; border-radius: 2px; }
-    .lang-sep { color: var(--border-strong); font-size: 0.75rem; user-select: none; }
-    .lang-switcher-mobile {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    /* ─── Navbar ────────────────────────────────────────────────────── */
-    .navbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 0 24px;
-      background: rgba(0,0,0,0.75);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .navbar__inner {
-      max-width: 1140px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-    }
-    .navbar__logo img {
-      height: 36px;
-      width: auto;
-      display: block;
-    }
-    .navbar__links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
-    .navbar__links a {
-      color: var(--white-dim);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      transition: color 0.2s;
-      cursor: pointer;
-    }
-    .navbar__links a:hover { color: var(--pink-light); }
-    .navbar__links a:focus-visible { outline: 2px solid var(--pink); outline-offset: 2px; border-radius: 2px; }
-    .navbar__cta { font-size: 0.875rem !important; padding: 9px 22px !important; }
-    .navbar__hamburger {
-      display: none;
-      background: none;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 8px;
-      cursor: pointer;
-      color: var(--white);
-    }
-    .navbar__hamburger:focus-visible { outline: 2px solid var(--pink); outline-offset: 2px; }
-    .navbar__mobile-menu {
-      display: none;
-      flex-direction: column;
-      gap: 0;
-      background: rgba(0,0,0,0.96);
-      border-top: 1px solid var(--border);
-      padding: 16px 24px 24px;
-    }
-    .navbar__mobile-menu.open { display: flex; }
-    .navbar__mobile-menu a {
-      color: var(--white-dim);
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 500;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-      cursor: pointer;
-      transition: color 0.2s;
-    }
-    .navbar__mobile-menu a:last-child { border-bottom: none; padding-top: 20px; }
-    .navbar__mobile-menu a:hover { color: var(--pink-light); }
-
-    @media (max-width: 768px) {
-      .navbar__links { display: none; }
-      .navbar__hamburger { display: flex; align-items: center; justify-content: center; }
-    }
-
-    /* ─── Hero ──────────────────────────────────────────────────────── */
-    .hero {
-      padding-top: 64px;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-    }
-    .hero__inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-      padding: 80px 0;
-    }
-    .hero__badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 16px;
-      border: 1px solid var(--border-strong);
-      border-radius: 100px;
-      background: var(--glow-soft);
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--pink-light);
-      margin-bottom: 28px;
-      white-space: nowrap;
-    }
-    .hero__badge span[aria-hidden] { width: 6px; height: 6px; border-radius: 50%; background: var(--pink); display: inline-block; }
-    .hero__title {
-      font-family: var(--font-h);
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
-      font-weight: 900;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-    }
-    .hero__subtitle {
-      font-family: var(--font-h);
-      font-size: clamp(0.85rem, 1.5vw, 1rem);
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--white-dim);
-      margin-bottom: 24px;
-    }
-    .hero__desc {
-      font-size: 1.05rem;
-      color: var(--white-dim);
-      max-width: 480px;
-      margin-bottom: 40px;
-      line-height: 1.7;
-    }
-    .hero__actions { display: flex; gap: 16px; flex-wrap: wrap; }
-    .hero__visual {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero__logo-wrap {
-      position: relative;
-      width: 100%;
-      max-width: 420px;
-    }
-    .hero__logo-wrap::before {
-      content: '';
-      position: absolute;
-      inset: -40px;
-      background: radial-gradient(ellipse at center, rgba(255,20,147,0.18) 0%, transparent 65%);
-      border-radius: 50%;
-      z-index: 0;
-    }
-    .hero__logo-img {
-      width: 100%;
-      height: auto;
-      position: relative;
-      z-index: 1;
-      filter: drop-shadow(0 0 40px rgba(255,20,147,0.35));
-    }
-    .hero__lines {
-      position: absolute;
-      top: 50%; left: -40px;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .hero__line { width: 2px; background: linear-gradient(180deg, transparent, var(--pink), transparent); }
-    .hero__line:nth-child(1) { height: 80px; opacity: 0.6; }
-    .hero__line:nth-child(2) { height: 140px; opacity: 0.4; }
-    .hero__line:nth-child(3) { height: 60px; opacity: 0.3; }
-
-    @media (max-width: 900px) {
-      .hero__inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
-      .hero__desc { margin-left: auto; margin-right: auto; }
-      .hero__actions { justify-content: center; }
-      .hero__lines { display: none; }
-      .hero__logo-wrap { max-width: 280px; margin: 0 auto; }
-    }
-
-    /* ─── Stats ─────────────────────────────────────────────────────── */
-    .stats { padding: 0 0 80px; }
-    .stats__grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .stats__item {
-      background: var(--card-bg);
-      padding: 40px 32px;
-      text-align: center;
-      transition: background 0.2s;
-    }
-    .stats__item:hover { background: var(--card-hover); }
-    .stats__value {
-      font-family: var(--font-h);
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 900;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .stats__label {
-      font-size: 0.85rem;
-      color: var(--white-dim);
-      font-weight: 500;
-      letter-spacing: 0.06em;
-    }
-
-    @media (max-width: 640px) {
-      .stats__grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 400px) {
-      .stats__grid { grid-template-columns: 1fr; }
-    }
-
-    /* ─── Section shared ────────────────────────────────────────────── */
-    .section { padding: 96px 0; }
-    .section__eyebrow {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--pink);
-      margin-bottom: 14px;
-    }
-    .section__title {
-      font-family: var(--font-h);
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
-    }
-    .section__subtitle {
-      font-size: 1.05rem;
-      color: var(--white-dim);
-      max-width: 540px;
-      line-height: 1.7;
-    }
-    .section__head { margin-bottom: 56px; }
-
-    /* ─── Services ───────────────────────────────────────────────────── */
-    .services__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .service-card {
-      background: var(--card-bg);
-      padding: 40px 32px;
-      border-left: 3px solid transparent;
-      transition: background 0.2s, border-color 0.2s;
-      position: relative;
-    }
-    .service-card:hover { background: var(--card-hover); border-left-color: var(--pink); }
-    .service-card__icon {
-      width: 48px; height: 48px;
-      display: flex; align-items: center; justify-content: center;
-      border: 1px solid var(--border-strong);
-      border-radius: 8px;
-      background: rgba(255,20,147,0.06);
-      margin-bottom: 20px;
-    }
-    .service-card__icon svg { width: 22px; height: 22px; color: var(--pink); }
-    .service-card__title {
-      font-family: var(--font-h);
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      margin-bottom: 12px;
-    }
-    .service-card__desc { font-size: 0.9rem; color: var(--white-dim); line-height: 1.65; }
-
-    @media (max-width: 900px) { .services__grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 580px) { .services__grid { grid-template-columns: 1fr; } }
-
-    /* ─── Philosophy ─────────────────────────────────────────────────── */
-    .philosophy { background: var(--card-bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .philosophy__inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    .philosophy__quote {
-      font-family: var(--font-h);
-      font-size: clamp(1.1rem, 2vw, 1.4rem);
-      font-weight: 700;
-      line-height: 1.55;
-      letter-spacing: 0.01em;
-      padding-left: 24px;
-      border-left: 3px solid var(--pink);
-    }
-    .philosophy__points { list-style: none; display: flex; flex-direction: column; gap: 24px; }
-    .philosophy__point {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-    }
-    .philosophy__dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--pink-light), var(--pink));
-      flex-shrink: 0;
-      margin-top: 6px;
-    }
-    .philosophy__point-text { font-size: 0.95rem; color: var(--white-dim); line-height: 1.65; }
-    .philosophy__point-text strong { color: var(--white); font-weight: 600; }
-
-    @media (max-width: 800px) {
-      .philosophy__inner { grid-template-columns: 1fr; gap: 40px; }
-    }
-
-    /* ─── Contact ────────────────────────────────────────────────────── */
-    .contact__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
-    }
-    .contact__info { display: flex; flex-direction: column; gap: 32px; }
-    .contact__item {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      padding: 24px;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      transition: background 0.2s, border-color 0.2s;
-    }
-    .contact__item:hover { background: var(--card-hover); border-color: var(--border-strong); }
-    .contact__icon {
-      width: 48px; height: 48px; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      border: 1px solid var(--border-strong);
-      border-radius: 8px;
-      background: rgba(255,20,147,0.06);
-    }
-    .contact__icon svg { width: 20px; height: 20px; color: var(--pink); }
-    .contact__item-label { font-size: 0.75rem; color: var(--white-dim); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
-    .contact__item-value { font-size: 1rem; color: var(--white); font-weight: 600; text-decoration: none; }
-    .contact__item-value:hover { color: var(--pink-light); }
-    .contact__cta-box {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 48px 40px;
-      text-align: center;
-    }
-    .contact__cta-box h3 {
-      font-family: var(--font-h);
-      font-size: 1.5rem;
-      font-weight: 900;
-      margin-bottom: 12px;
-    }
-    .contact__cta-box p { color: var(--white-dim); font-size: 0.95rem; margin-bottom: 32px; line-height: 1.65; }
-
-    @media (max-width: 800px) {
-      .contact__grid { grid-template-columns: 1fr; gap: 40px; }
-    }
-
-    /* ─── Footer ─────────────────────────────────────────────────────── */
-    .footer {
-      padding: 48px 0 32px;
-      position: relative;
-      z-index: 1;
-    }
-    .footer__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-    .footer__logo img { height: 28px; width: auto; }
-    .footer__copy { font-size: 0.8rem; color: var(--white-dim); }
-    .footer__tagline {
-      font-size: 0.75rem;
-      color: var(--pink);
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    /* ─── Skip link ──────────────────────────────────────────────────── */
-    .skip-link {
-      position: absolute;
-      top: -100px;
-      left: 16px;
-      padding: 8px 16px;
-      background: var(--pink);
-      color: var(--white);
-      font-weight: 700;
-      border-radius: 4px;
-      text-decoration: none;
-      z-index: 9999;
-      transition: top 0.2s;
-    }
-    .skip-link:focus { top: 8px; }
-
-    /* ─── Scroll reveal ──────────────────────────────────────────────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
-    .reveal.visible { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1; transform: none; transition: none; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
+  <script>document.documentElement.classList.add('js-ready');</script>
 </head>
 <body>
 
@@ -604,7 +38,7 @@
   <header role="banner">
     <nav class="navbar" data-i18n-label="nav_aria" aria-label="Navegación principal">
       <div class="navbar__inner">
-        <a class="navbar__logo" href="#" aria-label="Sastre AI — Inicio">
+        <a class="navbar__logo" href="#" aria-label="Sastre AI - Inicio">
           <img src="Logos/secundario transparente rosa.png" alt="Sastre AI" />
         </a>
         <ul class="navbar__links" role="list">
@@ -620,7 +54,7 @@
             </div>
           </li>
           <li>
-            <a href="#contacto" class="btn-primary navbar__cta" data-i18n="nav_cta">¿Hablamos?</a>
+            <a href="#contacto" class="btn btn-primary navbar__cta" data-i18n="nav_cta">¿Hablamos?</a>
           </li>
         </ul>
         <button class="navbar__hamburger" data-i18n-label="nav_hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" id="hamburger-btn">
@@ -641,7 +75,7 @@
         <a href="#filosofia" role="menuitem" data-i18n="nav_about">Nosotros</a>
         <a href="#contacto" role="menuitem" data-i18n="nav_contact">Contacto</a>
         <a href="/blog/" role="menuitem" data-i18n="nav_blog">Blog</a>
-        <a href="#contacto" class="btn-primary" role="menuitem" style="text-align:center;" data-i18n="nav_cta">¿Hablamos?</a>
+        <a href="#contacto" class="btn btn-primary" role="menuitem" style="text-align:center; justify-content:center;" data-i18n="nav_cta">¿Hablamos?</a>
       </div>
     </nav>
   </header>
@@ -653,35 +87,25 @@
       <div class="container">
         <div class="hero__inner">
           <div>
-            <div class="hero__badge reveal">
-              <span aria-hidden="true"></span>
-              <span data-i18n="hero_badge">Inteligencia Artificial Aplicada</span>
-            </div>
             <h1 class="hero__title reveal" data-i18n-html="hero_title">
               Tu empresa.<br />
-              <span class="gradient-text">Potenciada por IA.</span>
+              <span class="accent">Potenciada por IA.</span>
             </h1>
-            <p class="hero__subtitle reveal" data-i18n="hero_subtitle">Automatización · Innovación · Resultados</p>
             <p class="hero__desc reveal" data-i18n="hero_desc">
-              Transformamos negocios del sector industrial mediante automatización inteligente y soluciones 100% a medida. Sin tecnología genérica: soluciones que funcionan desde el primer día.
+              Automatización, visión artificial y software a medida para el sector industrial. Analizamos tu operativa antes de proponer nada.
             </p>
             <div class="hero__actions reveal">
-              <a href="#contacto" class="btn-primary" data-i18n="hero_cta">¿Hablamos?</a>
-              <a href="#servicios" class="btn-ghost" data-i18n="hero_services">Ver servicios</a>
+              <a href="#contacto" class="btn btn-primary" data-i18n="hero_cta">¿Hablamos?</a>
+              <a href="#servicios" class="btn btn-secondary" data-i18n="hero_services">Ver servicios</a>
             </div>
           </div>
           <div class="hero__visual reveal" aria-hidden="true">
-            <div class="hero__logo-wrap">
-              <div class="hero__lines">
-                <div class="hero__line"></div>
-                <div class="hero__line"></div>
-                <div class="hero__line"></div>
-              </div>
+            <div class="hero__frame">
               <img
-                class="hero__logo-img"
-                src="Logos/principal transparente degradado.png"
+                src="https://picsum.photos/id/1031/900/1120"
                 alt=""
                 role="presentation"
+                loading="eager"
               />
             </div>
           </div>
@@ -689,176 +113,126 @@
       </div>
     </section>
 
-    <hr class="separator" />
-
     <!-- ── Stats ─────────────────────────────────────────────────────── -->
     <section class="stats" data-i18n-label="stats_aria" aria-label="Métricas clave">
       <div class="container">
-        <div class="stats__grid reveal">
+        <div class="stats__row reveal">
           <div class="stats__item">
-            <div class="stats__value gradient-text">80%</div>
+            <div class="stats__value">80%</div>
             <div class="stats__label" data-i18n="stats_label1">Reducción de tareas manuales</div>
           </div>
           <div class="stats__item">
-            <div class="stats__value gradient-text">24/7</div>
+            <div class="stats__value">24/7</div>
             <div class="stats__label" data-i18n="stats_label2">Sistemas activos</div>
           </div>
           <div class="stats__item">
-            <div class="stats__value gradient-text">100%</div>
+            <div class="stats__value">100%</div>
             <div class="stats__label" data-i18n="stats_label3">Solución a medida</div>
           </div>
           <div class="stats__item">
-            <div class="stats__value gradient-text">ROI</div>
+            <div class="stats__value accent">ROI</div>
             <div class="stats__label" data-i18n="stats_label4">Medible desde el día 1</div>
           </div>
         </div>
       </div>
     </section>
 
-    <hr class="separator" />
-
     <!-- ── Services ──────────────────────────────────────────────────── -->
     <section class="section" id="servicios" data-i18n-label="services_aria" aria-label="Servicios">
       <div class="container">
         <div class="section__head reveal">
-          <p class="section__eyebrow" data-i18n="services_eyebrow">Lo que hacemos</p>
-          <h2 class="section__title" data-i18n-html="services_title">Soluciones diseñadas<br /><span class="gradient-text">para tu industria</span></h2>
+          <h2 class="section__title" data-i18n="services_title">Soluciones diseñadas para tu industria</h2>
           <p class="section__subtitle" data-i18n="services_subtitle">Cada proyecto parte de un análisis real de tu operativa. Identificamos dónde la IA genera impacto y entregamos una solución que funciona.</p>
         </div>
-        <div class="services__grid">
 
-          <article class="service-card reveal">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            </div>
-            <h3 class="service-card__title" data-i18n="s1_title">Automatización de Procesos</h3>
-            <p class="service-card__desc" data-i18n="s1_desc">Flujos automáticos que ahorran horas diarias y eliminan el error humano en tus operaciones repetitivas.</p>
+        <div class="services__row-lg reveal">
+          <article class="service-tile service-tile--pattern-a">
+            <h3 class="service-tile__title" data-i18n="s1_title">Automatización de Procesos</h3>
+            <p class="service-tile__desc" data-i18n="s1_desc">Flujos automáticos que ahorran horas diarias y eliminan el error humano en tus operaciones repetitivas.</p>
           </article>
-
-          <article class="service-card reveal">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-            </div>
-            <h3 class="service-card__title" data-i18n="s2_title">Agentes y Asistentes IA</h3>
-            <p class="service-card__desc" data-i18n="s2_desc">Asistentes entrenados específicamente para tu negocio: atención, gestión interna y soporte operativo.</p>
+          <article class="service-tile service-tile--tint">
+            <h3 class="service-tile__title" data-i18n="s2_title">Agentes y Asistentes IA</h3>
+            <p class="service-tile__desc" data-i18n="s2_desc">Asistentes entrenados específicamente para tu negocio: atención, gestión interna y soporte operativo.</p>
           </article>
+        </div>
 
-          <article class="service-card reveal">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            </div>
-            <h3 class="service-card__title" data-i18n="s3_title">Visión Artificial</h3>
-            <p class="service-card__desc" data-i18n="s3_desc">Control de calidad y detección de defectos en tiempo real en líneas de producción industrial.</p>
+        <div class="services__row-sm reveal">
+          <article class="service-tile service-tile--pattern-b">
+            <h3 class="service-tile__title" data-i18n="s3_title">Visión Artificial</h3>
+            <p class="service-tile__desc" data-i18n="s3_desc">Control de calidad y detección de defectos en tiempo real en líneas de producción industrial.</p>
           </article>
-
-          <article class="service-card reveal">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 4-4"/></svg>
-            </div>
-            <h3 class="service-card__title" data-i18n="s4_title">Datos e Informes en Tiempo Real</h3>
-            <p class="service-card__desc" data-i18n="s4_desc">Dashboards automáticos para tomar decisiones basadas en datos, no en intuición. Toda tu operativa visible al instante.</p>
+          <article class="service-tile service-tile--tint">
+            <h3 class="service-tile__title" data-i18n="s4_title">Datos e Informes en Tiempo Real</h3>
+            <p class="service-tile__desc" data-i18n="s4_desc">Dashboards automáticos para tomar decisiones basadas en datos, no en intuición.</p>
           </article>
-
-          <article class="service-card reveal">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-            </div>
-            <h3 class="service-card__title" data-i18n="s5_title">Software y Apps a Medida</h3>
-            <p class="service-card__desc" data-i18n="s5_desc">Aplicaciones con IA integrada construidas exactamente para lo que tu empresa necesita, sin funcionalidades innecesarias.</p>
+          <article class="service-tile">
+            <h3 class="service-tile__title" data-i18n="s5_title">Software y Apps a Medida</h3>
+            <p class="service-tile__desc" data-i18n="s5_desc">Aplicaciones con IA integrada construidas exactamente para lo que tu empresa necesita.</p>
           </article>
-
-          <article class="service-card reveal">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="12" r="3"/><circle cx="16" cy="6" r="3"/><circle cx="16" cy="18" r="3"/><path d="M11 10.5l2-1.5M11 13.5l2 1.5"/></svg>
-            </div>
-            <h3 class="service-card__title" data-i18n="s6_title">Integración de Sistemas</h3>
-            <p class="service-card__desc" data-i18n="s6_desc">Conexión de tu ERP, CRM y maquinaria existente con IA sin interrumpir la operativa ni reemplazar lo que ya funciona.</p>
+          <article class="service-tile service-tile--tint">
+            <h3 class="service-tile__title" data-i18n="s6_title">Integración de Sistemas</h3>
+            <p class="service-tile__desc" data-i18n="s6_desc">Conexión de tu ERP, CRM y maquinaria existente con IA sin interrumpir la operativa.</p>
           </article>
-
         </div>
       </div>
     </section>
-
-    <hr class="separator" />
 
     <!-- ── Philosophy ─────────────────────────────────────────────────── -->
     <section class="section philosophy" id="filosofia" data-i18n-label="phil_section_aria" aria-label="Nuestra filosofía">
       <div class="container">
-        <div class="philosophy__inner">
-          <div class="reveal">
-            <p class="section__eyebrow" data-i18n="phil_eyebrow">Nuestra filosofía</p>
-            <h2 class="section__title" data-i18n-html="phil_title">No vendemos<br /><span class="gradient-text">tecnología por vender</span></h2>
-            <blockquote class="philosophy__quote" data-i18n="phil_quote">
-              "Analizamos tu operativa, identificamos dónde la IA genera impacto real y entregamos soluciones que funcionan desde el primer día."
-            </blockquote>
+        <div class="philosophy__statement reveal">
+          <h2 class="section__title" data-i18n="phil_title">No vendemos tecnología por vender</h2>
+          <p class="philosophy__quote" data-i18n="phil_quote">
+            Analizamos tu operativa, identificamos dónde la IA genera impacto real y entregamos soluciones que funcionan desde el primer día.
+          </p>
+        </div>
+        <div class="philosophy__grid reveal" data-i18n-label="phil_aria" aria-label="Nuestros valores">
+          <div class="philosophy__point">
+            <h3 class="philosophy__point-title" data-i18n="phil_p1_title">Premium y especializado</h3>
+            <p class="philosophy__point-text" data-i18n="phil_p1">Trabajamos en profundidad con cada cliente, no escalamos con soluciones genéricas.</p>
           </div>
-          <ul class="philosophy__points reveal" data-i18n-label="phil_aria" aria-label="Nuestros valores">
-            <li class="philosophy__point">
-              <div class="philosophy__dot" aria-hidden="true"></div>
-              <p class="philosophy__point-text" data-i18n-html="phil_p1"><strong>Premium y especializado.</strong> Trabajamos en profundidad con cada cliente, no escalamos con soluciones genéricas.</p>
-            </li>
-            <li class="philosophy__point">
-              <div class="philosophy__dot" aria-hidden="true"></div>
-              <p class="philosophy__point-text" data-i18n-html="phil_p2"><strong>Resultados medibles.</strong> Cada proyecto incluye métricas de impacto desde el arranque. Sin humo, sin promesas vacías.</p>
-            </li>
-            <li class="philosophy__point">
-              <div class="philosophy__dot" aria-hidden="true"></div>
-              <p class="philosophy__point-text" data-i18n-html="phil_p3"><strong>Sector industrial en el ADN.</strong> Fabricación, producción, logística y operaciones: es nuestro entorno natural.</p>
-            </li>
-            <li class="philosophy__point">
-              <div class="philosophy__dot" aria-hidden="true"></div>
-              <p class="philosophy__point-text" data-i18n-html="phil_p4"><strong>Sin interrupciones.</strong> Integramos la IA en lo que ya tienes. Tu operativa no se para, se potencia.</p>
-            </li>
-          </ul>
+          <div class="philosophy__point">
+            <h3 class="philosophy__point-title" data-i18n="phil_p2_title">Resultados medibles</h3>
+            <p class="philosophy__point-text" data-i18n="phil_p2">Cada proyecto incluye métricas de impacto desde el arranque, sin promesas vacías.</p>
+          </div>
+          <div class="philosophy__point">
+            <h3 class="philosophy__point-title" data-i18n="phil_p3_title">Sector industrial en el ADN</h3>
+            <p class="philosophy__point-text" data-i18n="phil_p3">Fabricación, producción, logística y operaciones: es nuestro entorno natural.</p>
+          </div>
+          <div class="philosophy__point">
+            <h3 class="philosophy__point-title" data-i18n="phil_p4_title">Sin interrupciones</h3>
+            <p class="philosophy__point-text" data-i18n="phil_p4">Integramos la IA en lo que ya tienes. Tu operativa no se para, se potencia.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <hr class="separator" />
-
     <!-- ── Contact ────────────────────────────────────────────────────── -->
     <section class="section" id="contacto" data-i18n-label="contact_aria" aria-label="Contacto">
       <div class="container">
-        <div class="section__head reveal" style="text-align:center; max-width:560px; margin-left:auto; margin-right:auto;">
-          <p class="section__eyebrow" data-i18n="contact_eyebrow">Hablemos</p>
-          <h2 class="section__title" data-i18n-html="contact_title">¿Listo para transformar<br /><span class="gradient-text">tu empresa con IA?</span></h2>
-          <p class="section__subtitle" style="margin:0 auto;" data-i18n="contact_subtitle">Cuéntanos tu reto. Analizamos si hay fit real y te decimos con honestidad qué impacto puede generar la IA en tu caso.</p>
+        <div class="section__head reveal">
+          <h2 class="section__title" data-i18n="contact_title">¿Listo para transformar tu empresa con IA?</h2>
+          <p class="section__subtitle" data-i18n="contact_subtitle">Cuéntanos tu reto. Analizamos si hay fit real y te decimos con honestidad qué impacto puede generar la IA en tu caso.</p>
         </div>
         <div class="contact__grid reveal">
-          <div class="contact__info">
-            <div class="contact__item">
-              <div class="contact__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
-              </div>
-              <div>
-                <p class="contact__item-label" data-i18n="contact_phone">Teléfono</p>
-                <a class="contact__item-value" href="tel:+34654061324">+34 654 06 13 24</a>
-              </div>
+          <div class="contact__rows">
+            <div class="contact__row">
+              <span class="contact__row-label" data-i18n="contact_phone">Teléfono</span>
+              <a class="contact__row-value" href="tel:+34654061324">+34 654 06 13 24</a>
             </div>
-            <div class="contact__item">
-              <div class="contact__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div>
-                <p class="contact__item-label" data-i18n="contact_email">Email</p>
-                <a class="contact__item-value" href="mailto:sastre@sastreai.es">sastre@sastreai.es</a>
-              </div>
+            <div class="contact__row">
+              <span class="contact__row-label" data-i18n="contact_email">Email</span>
+              <a class="contact__row-value" href="mailto:sastre@sastreai.es">sastre@sastreai.es</a>
             </div>
-            <div class="contact__item">
-              <div class="contact__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              </div>
-              <div>
-                <p class="contact__item-label" data-i18n="contact_web">Web</p>
-                <a class="contact__item-value" href="https://sastreai.es" target="_blank" rel="noopener noreferrer">sastreai.es</a>
-              </div>
+            <div class="contact__row">
+              <span class="contact__row-label" data-i18n="contact_web">Web</span>
+              <a class="contact__row-value" href="https://sastreai.es" target="_blank" rel="noopener noreferrer">sastreai.es</a>
             </div>
           </div>
-          <div class="contact__cta-box">
-            <h3 data-i18n="contact_cta_h3">¿Hablamos?</h3>
-            <p data-i18n="contact_cta_p">Sin compromiso. En 30 minutos sabrás si la IA puede transformar tu negocio y cómo.</p>
-            <a href="mailto:sastre@sastreai.es" class="btn-primary" style="width:100%; justify-content:center;">
-              <span data-i18n="contact_cta_btn">Escribir a Sastre AI</span>
+          <div class="contact__panel">
+            <p data-i18n="contact_panel_p">Cuéntanos tu reto en una llamada de 30 minutos. Sin compromiso, con una respuesta honesta sobre el impacto real que la IA puede tener en tu operativa.</p>
+            <a href="mailto:sastre@sastreai.es" class="btn btn-primary">
+              <span data-i18n="contact_cta_btn">¿Hablamos?</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
@@ -869,15 +243,18 @@
   </main>
 
   <!-- ── Footer ─────────────────────────────────────────────────────── -->
-  <hr class="separator" />
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__inner">
-        <a href="#" aria-label="Sastre AI — Volver al inicio">
-          <img src="Logos/secundario transparente rosa.png" alt="Sastre AI" style="height:28px;" />
+        <a href="#" aria-label="Sastre AI - Volver al inicio" class="footer__logo">
+          <img src="Logos/secundario transparente rosa.png" alt="Sastre AI" />
         </a>
-        <p class="footer__copy" data-i18n="footer_copy">© 2025 Sastre AI. Todos los derechos reservados.</p>
-        <p class="footer__tagline" data-i18n="footer_tagline">Inteligencia Artificial Aplicada</p>
+        <ul class="footer__links" role="list">
+          <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
+          <li><a href="#filosofia" data-i18n="nav_about">Nosotros</a></li>
+          <li><a href="/blog/" data-i18n="nav_blog">Blog</a></li>
+        </ul>
+        <p class="footer__copy" data-i18n="footer_copy">© 2026 Sastre AI. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
@@ -886,7 +263,7 @@
     // ── Translations ─────────────────────────────────────────────────
     const i18n = {
       es: {
-        page_title:        'Sastre AI — Inteligencia Artificial Aplicada',
+        page_title:        'Sastre AI - Inteligencia Artificial Aplicada',
         page_desc:         'Transformamos negocios del sector industrial mediante automatización inteligente y soluciones 100% a medida.',
         skip_link:         'Saltar al contenido',
         nav_aria:          'Navegación principal',
@@ -898,10 +275,8 @@
         nav_hamburger:     'Abrir menú',
         mobile_menu_aria:  'Menú móvil',
         hero_aria:         'Presentación',
-        hero_badge:        'Inteligencia Artificial Aplicada',
-        hero_title:        'Tu empresa.<br /><span class="gradient-text">Potenciada por IA.</span>',
-        hero_subtitle:     'Automatización · Innovación · Resultados',
-        hero_desc:         'Transformamos negocios del sector industrial mediante automatización inteligente y soluciones 100% a medida. Sin tecnología genérica: soluciones que funcionan desde el primer día.',
+        hero_title:        'Tu empresa.<br /><span class="accent">Potenciada por IA.</span>',
+        hero_desc:         'Automatización, visión artificial y software a medida para el sector industrial. Analizamos tu operativa antes de proponer nada.',
         hero_cta:          '¿Hablamos?',
         hero_services:     'Ver servicios',
         stats_aria:        'Métricas clave',
@@ -910,8 +285,7 @@
         stats_label3:      'Solución a medida',
         stats_label4:      'Medible desde el día 1',
         services_aria:     'Servicios',
-        services_eyebrow:  'Lo que hacemos',
-        services_title:    'Soluciones diseñadas<br /><span class="gradient-text">para tu industria</span>',
+        services_title:    'Soluciones diseñadas para tu industria',
         services_subtitle: 'Cada proyecto parte de un análisis real de tu operativa. Identificamos dónde la IA genera impacto y entregamos una solución que funciona.',
         s1_title:          'Automatización de Procesos',
         s1_desc:           'Flujos automáticos que ahorran horas diarias y eliminan el error humano en tus operaciones repetitivas.',
@@ -920,35 +294,35 @@
         s3_title:          'Visión Artificial',
         s3_desc:           'Control de calidad y detección de defectos en tiempo real en líneas de producción industrial.',
         s4_title:          'Datos e Informes en Tiempo Real',
-        s4_desc:           'Dashboards automáticos para tomar decisiones basadas en datos, no en intuición. Toda tu operativa visible al instante.',
+        s4_desc:           'Dashboards automáticos para tomar decisiones basadas en datos, no en intuición.',
         s5_title:          'Software y Apps a Medida',
-        s5_desc:           'Aplicaciones con IA integrada construidas exactamente para lo que tu empresa necesita, sin funcionalidades innecesarias.',
+        s5_desc:           'Aplicaciones con IA integrada construidas exactamente para lo que tu empresa necesita.',
         s6_title:          'Integración de Sistemas',
-        s6_desc:           'Conexión de tu ERP, CRM y maquinaria existente con IA sin interrumpir la operativa ni reemplazar lo que ya funciona.',
+        s6_desc:           'Conexión de tu ERP, CRM y maquinaria existente con IA sin interrumpir la operativa.',
         phil_section_aria: 'Nuestra filosofía',
-        phil_eyebrow:      'Nuestra filosofía',
-        phil_title:        'No vendemos<br /><span class="gradient-text">tecnología por vender</span>',
-        phil_quote:        '"Analizamos tu operativa, identificamos dónde la IA genera impacto real y entregamos soluciones que funcionan desde el primer día."',
+        phil_title:        'No vendemos tecnología por vender',
+        phil_quote:        'Analizamos tu operativa, identificamos dónde la IA genera impacto real y entregamos soluciones que funcionan desde el primer día.',
         phil_aria:         'Nuestros valores',
-        phil_p1:           '<strong>Premium y especializado.</strong> Trabajamos en profundidad con cada cliente, no escalamos con soluciones genéricas.',
-        phil_p2:           '<strong>Resultados medibles.</strong> Cada proyecto incluye métricas de impacto desde el arranque. Sin humo, sin promesas vacías.',
-        phil_p3:           '<strong>Sector industrial en el ADN.</strong> Fabricación, producción, logística y operaciones: es nuestro entorno natural.',
-        phil_p4:           '<strong>Sin interrupciones.</strong> Integramos la IA en lo que ya tienes. Tu operativa no se para, se potencia.',
+        phil_p1_title:     'Premium y especializado',
+        phil_p1:           'Trabajamos en profundidad con cada cliente, no escalamos con soluciones genéricas.',
+        phil_p2_title:     'Resultados medibles',
+        phil_p2:           'Cada proyecto incluye métricas de impacto desde el arranque, sin promesas vacías.',
+        phil_p3_title:     'Sector industrial en el ADN',
+        phil_p3:           'Fabricación, producción, logística y operaciones: es nuestro entorno natural.',
+        phil_p4_title:     'Sin interrupciones',
+        phil_p4:           'Integramos la IA en lo que ya tienes. Tu operativa no se para, se potencia.',
         contact_aria:      'Contacto',
-        contact_eyebrow:   'Hablemos',
-        contact_title:     '¿Listo para transformar<br /><span class="gradient-text">tu empresa con IA?</span>',
+        contact_title:     '¿Listo para transformar tu empresa con IA?',
         contact_subtitle:  'Cuéntanos tu reto. Analizamos si hay fit real y te decimos con honestidad qué impacto puede generar la IA en tu caso.',
         contact_phone:     'Teléfono',
         contact_email:     'Email',
         contact_web:       'Web',
-        contact_cta_h3:    '¿Hablamos?',
-        contact_cta_p:     'Sin compromiso. En 30 minutos sabrás si la IA puede transformar tu negocio y cómo.',
-        contact_cta_btn:   'Escribir a Sastre AI',
-        footer_copy:       '© 2025 Sastre AI. Todos los derechos reservados.',
-        footer_tagline:    'Inteligencia Artificial Aplicada',
+        contact_panel_p:   'Cuéntanos tu reto en una llamada de 30 minutos. Sin compromiso, con una respuesta honesta sobre el impacto real que la IA puede tener en tu operativa.',
+        contact_cta_btn:   '¿Hablamos?',
+        footer_copy:       '© 2026 Sastre AI. Todos los derechos reservados.',
       },
       en: {
-        page_title:        'Sastre AI — Applied Artificial Intelligence',
+        page_title:        'Sastre AI - Applied Artificial Intelligence',
         page_desc:         'We transform industrial businesses through intelligent automation and 100% custom-built solutions.',
         skip_link:         'Skip to content',
         nav_aria:          'Main navigation',
@@ -960,10 +334,8 @@
         nav_hamburger:     'Open menu',
         mobile_menu_aria:  'Mobile menu',
         hero_aria:         'Introduction',
-        hero_badge:        'Applied Artificial Intelligence',
-        hero_title:        'Your business.<br /><span class="gradient-text">Powered by AI.</span>',
-        hero_subtitle:     'Automation · Innovation · Results',
-        hero_desc:         'We transform industrial businesses through intelligent automation and 100% custom-built solutions. No generic technology: solutions that work from day one.',
+        hero_title:        'Your business.<br /><span class="accent">Powered by AI.</span>',
+        hero_desc:         'Process automation, computer vision and custom software for industrial operations. We analyse your workflow before proposing anything.',
         hero_cta:          "Let's talk",
         hero_services:     'View services',
         stats_aria:        'Key metrics',
@@ -972,8 +344,7 @@
         stats_label3:      'Custom-built solution',
         stats_label4:      'Measurable from day 1',
         services_aria:     'Services',
-        services_eyebrow:  'What we do',
-        services_title:    'Solutions designed<br /><span class="gradient-text">for your industry</span>',
+        services_title:    'Solutions designed for your industry',
         services_subtitle: 'Every project starts with a real analysis of your operations. We identify where AI creates impact and deliver a solution that works.',
         s1_title:          'Process Automation',
         s1_desc:           'Automated workflows that save hours every day and eliminate human error in your repetitive operations.',
@@ -982,32 +353,32 @@
         s3_title:          'Computer Vision',
         s3_desc:           'Real-time quality control and defect detection on industrial production lines.',
         s4_title:          'Real-Time Data & Reports',
-        s4_desc:           "Automated dashboards to make data-driven decisions, not gut-feel ones. Your entire operation visible at a glance.",
+        s4_desc:           "Automated dashboards to make data-driven decisions, not gut-feel ones.",
         s5_title:          'Custom Software & Apps',
-        s5_desc:           'AI-powered applications built exactly for what your company needs — no unnecessary features.',
+        s5_desc:           'AI-powered applications built exactly for what your company needs.',
         s6_title:          'Systems Integration',
-        s6_desc:           'Connect your ERP, CRM, and existing machinery with AI — without disrupting operations or replacing what already works.',
+        s6_desc:           'Connect your ERP, CRM, and existing machinery with AI, without disrupting operations.',
         phil_section_aria: 'Our philosophy',
-        phil_eyebrow:      'Our philosophy',
-        phil_title:        "We don't sell<br /><span class=\"gradient-text\">technology for the sake of it</span>",
-        phil_quote:        '"We analyse your operations, identify where AI creates real impact, and deliver solutions that work from day one."',
+        phil_title:        "We don't sell technology for the sake of it",
+        phil_quote:        'We analyse your operations, identify where AI creates real impact, and deliver solutions that work from day one.',
         phil_aria:         'Our values',
-        phil_p1:           "<strong>Premium and specialised.</strong> We work in depth with each client — we don't scale with generic solutions.",
-        phil_p2:           '<strong>Measurable results.</strong> Every project includes impact metrics from the start. No smoke, no empty promises.',
-        phil_p3:           "<strong>Industrial DNA.</strong> Manufacturing, production, logistics and operations: it's our natural environment.",
-        phil_p4:           "<strong>Zero disruption.</strong> We integrate AI into what you already have. Your operations don't stop — they level up.",
+        phil_p1_title:     'Premium and specialised',
+        phil_p1:           "We work in depth with each client. We don't scale with generic solutions.",
+        phil_p2_title:     'Measurable results',
+        phil_p2:           'Every project includes impact metrics from the start, with no empty promises.',
+        phil_p3_title:     'Industrial DNA',
+        phil_p3:           "Manufacturing, production, logistics and operations: it's our natural environment.",
+        phil_p4_title:     'Zero disruption',
+        phil_p4:           "We integrate AI into what you already have. Your operations don't stop, they level up.",
         contact_aria:      'Contact',
-        contact_eyebrow:   "Let's talk",
-        contact_title:     'Ready to transform<br /><span class="gradient-text">your business with AI?</span>',
+        contact_title:     'Ready to transform your business with AI?',
         contact_subtitle:  "Tell us your challenge. We'll analyse whether there's a real fit and honestly tell you what impact AI can generate in your case.",
         contact_phone:     'Phone',
         contact_email:     'Email',
         contact_web:       'Web',
-        contact_cta_h3:    "Let's talk",
-        contact_cta_p:     "No commitment. In 30 minutes you'll know if AI can transform your business and how.",
-        contact_cta_btn:   'Write to Sastre AI',
-        footer_copy:       '© 2025 Sastre AI. All rights reserved.',
-        footer_tagline:    'Applied Artificial Intelligence',
+        contact_panel_p:   "Tell us your challenge in a 30-minute call. No commitment, just an honest answer about the real impact AI can have on your operations.",
+        contact_cta_btn:   "Let's talk",
+        footer_copy:       '© 2026 Sastre AI. All rights reserved.',
       }
     };
 

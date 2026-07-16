@@ -75,72 +75,26 @@
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --black: #000000; --pink: #ff1493; --pink-light: #ff69b4;
-      --white: #ffffff; --white-dim: rgba(255,255,255,0.65);
-      --card-bg: rgba(255,255,255,0.03); --border: rgba(255,20,147,0.2);
-      --font-h: 'Orbitron', sans-serif; --font-b: 'Exo 2', sans-serif;
-    }
-    html { scroll-behavior: smooth; }
-    body { background: var(--black); color: var(--white); font-family: var(--font-b); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
-    body::before { content:''; position:fixed; inset:0; background-image: linear-gradient(rgba(255,20,147,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(255,20,147,0.04) 1px,transparent 1px); background-size:22px 22px; pointer-events:none; z-index:0; }
-    body::after { content:''; position:fixed; inset:0; background: radial-gradient(ellipse 60% 50% at 95% 5%, rgba(255,20,147,0.12) 0%,transparent 70%), radial-gradient(ellipse 50% 40% at 5% 95%, rgba(255,20,147,0.10) 0%,transparent 70%); pointer-events:none; z-index:0; }
-    .container { max-width: 780px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
-    nav { padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,20,147,0.15); position: relative; z-index: 10; }
-    nav a.logo { font-family: var(--font-h); font-weight: 900; font-size: 1.1rem; color: var(--pink); text-decoration: none; letter-spacing: 2px; }
-    nav a.back { color: var(--white-dim); text-decoration: none; font-size: 0.9rem; transition: color .2s; }
-    nav a.back:hover { color: var(--pink); }
-    header { padding: 64px 0 48px; }
-    .breadcrumb { font-size: 0.8rem; color: var(--white-dim); margin-bottom: 20px; }
-    .breadcrumb a { color: var(--pink-light); text-decoration: none; }
-    .article-meta { font-size: 0.85rem; color: var(--white-dim); margin-top: 16px; }
-    h1 { font-family: var(--font-h); font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
-    h1 span { background: linear-gradient(90deg, var(--pink-light), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .separator { height: 1px; background: linear-gradient(90deg, transparent, var(--pink-light), var(--pink), transparent); border: none; margin: 40px 0; }
-    article h2 { font-family: var(--font-h); font-size: 1.2rem; font-weight: 700; color: var(--pink-light); margin: 48px 0 16px; }
-    article h3 { font-size: 1.05rem; font-weight: 600; color: var(--white); margin: 32px 0 12px; border-left: 3px solid var(--pink); padding-left: 12px; }
-    article p { color: var(--white-dim); margin-bottom: 18px; }
-    article strong { color: var(--white); }
-    article ul, article ol { color: var(--white-dim); padding-left: 24px; margin-bottom: 18px; }
-    article li { margin-bottom: 8px; }
-    .stat-block { background: var(--card-bg); border: 1px solid var(--border); border-left: 3px solid var(--pink); border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
-    .stat-block .number { font-family: var(--font-h); font-size: 2rem; color: var(--pink); font-weight: 900; }
-    .stat-block p { margin: 4px 0 0; font-size: 0.9rem; }
-    .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 28px 0; }
-    .stat-row .stat-block { margin: 0; }
-    .faq-item { border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; margin-bottom: 12px; background: var(--card-bg); }
-    .faq-item h3 { border: none; padding: 0; margin: 0 0 10px; font-size: 1rem; color: var(--white); }
-    .faq-item p { margin: 0; font-size: 0.95rem; }
-    .cta-box { background: linear-gradient(135deg, rgba(255,20,147,0.1), rgba(255,105,180,0.05)); border: 1px solid var(--border); border-radius: 12px; padding: 40px; text-align: center; margin: 48px 0; }
-    .cta-box h2 { font-family: var(--font-h); font-size: 1.3rem; color: var(--white); margin-bottom: 12px; border: none; padding: 0; }
-    .cta-box p { color: var(--white-dim); margin-bottom: 24px; }
-    .btn { display: inline-block; background: linear-gradient(90deg, var(--pink-light), var(--pink)); color: var(--white); font-family: var(--font-h); font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; padding: 14px 32px; border-radius: 6px; text-decoration: none; transition: opacity .2s; }
-    .btn:hover { opacity: 0.85; }
-    .highlight-box { background: rgba(255,20,147,0.06); border: 1px solid rgba(255,20,147,0.25); border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
-    .highlight-box p { margin: 0; color: var(--white-dim); }
-    footer { border-top: 1px solid rgba(255,20,147,0.15); padding: 32px 24px; text-align: center; color: var(--white-dim); font-size: 0.85rem; position: relative; z-index: 1; margin-top: 80px; }
-    footer a { color: var(--pink-light); text-decoration: none; }
-  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
 </head>
 <body>
-  <nav>
-    <a class="logo" href="https://sastreai.es">SASTRE AI</a>
+  <nav class="blog-nav">
+    <a class="logo" href="https://sastreai.es"><img src="/Logos/secundario transparente rosa.png" alt="Sastre AI" /></a>
     <a class="back" href="https://sastreai.es/blog/">← Blog</a>
   </nav>
 
-  <div class="container">
-    <header>
+  <div class="article-container">
+    <header class="article-head">
       <div class="breadcrumb"><a href="https://sastreai.es">Inicio</a> › <a href="https://sastreai.es/blog/">Blog</a> › Visión Artificial Industrial</div>
-      <h1><span>Visión Artificial</span> para Control de Calidad Industrial: Cero Defectos con IA</h1>
+      <h1><span class="accent">Visión Artificial</span> para Control de Calidad Industrial: Cero Defectos con IA</h1>
       <p class="article-meta">Por Sastre AI · 17 de abril de 2026 · 10 min de lectura</p>
     </header>
 
     <hr class="separator" />
 
-    <article>
+    <article class="post">
 
       <p>Un solo defecto que llega al cliente puede costar 10 veces más que detectarlo en línea. Un lote devuelto puede costar 100 veces más. Y aun así, miles de empresas industriales en España siguen dependiendo del ojo humano para inspeccionar su producción.</p>
       <p>La <strong>visión artificial para control de calidad industrial</strong> no es una promesa futura: es una tecnología madura que hoy opera en plantas de automoción, alimentación, metal y farmacia con tasas de detección superiores al 99%. Este artículo explica cómo funciona, qué puede detectar en tu proceso y qué ROI real puedes esperar.</p>
@@ -169,11 +123,11 @@
 
       <h3>Defectos Superficiales</h3>
       <ul>
-        <li><strong>Grietas y fisuras</strong> — visibles o submilimétiricas según la resolución de cámara elegida</li>
-        <li><strong>Poros y burbujas</strong> — frecuentes en fundición, plástico inyectado, soldadura</li>
-        <li><strong>Rayaduras y marcas</strong> — críticas en piezas metálicas pulidas, vidrio o superficies lacadas</li>
-        <li><strong>Manchas, decoloración y variaciones de tono</strong> — especialmente relevantes en alimentación y textil</li>
-        <li><strong>Rebabas y material sobrante</strong> — habitual en piezas mecanizadas o moldeadas</li>
+        <li><strong>Grietas y fisuras:</strong> visibles o submilimétiricas según la resolución de cámara elegida</li>
+        <li><strong>Poros y burbujas:</strong> frecuentes en fundición, plástico inyectado, soldadura</li>
+        <li><strong>Rayaduras y marcas:</strong> críticas en piezas metálicas pulidas, vidrio o superficies lacadas</li>
+        <li><strong>Manchas, decoloración y variaciones de tono:</strong> especialmente relevantes en alimentación y textil</li>
+        <li><strong>Rebabas y material sobrante:</strong> habitual en piezas mecanizadas o moldeadas</li>
       </ul>
 
       <h3>Defectos Dimensionales y de Geometría</h3>
@@ -198,19 +152,19 @@
       <h2>Cómo Funciona un Sistema de Visión Artificial: el Proceso Real</h2>
       <p>Implementar visión artificial no es instalar una cámara. Es un proceso de ingeniería que en Sastre AI ejecutamos en cuatro fases:</p>
 
-      <h3>Fase 1 — Análisis del Proceso y Captura de Datos</h3>
+      <h3>Fase 1: Análisis del Proceso y Captura de Datos</h3>
       <p>El punto de partida es entender tu producto, tu línea y tu defecto. Analizamos la velocidad de la cinta, las condiciones de iluminación, el tipo de superficie y el tamaño mínimo del defecto a detectar. A partir de ahí, seleccionamos la resolución de cámara, el tipo de iluminación (difusa, coaxial, rasante, infrarroja) y la posición óptima de la estación de inspección.</p>
       <p>En esta fase también recopilamos muestras reales: piezas correctas, piezas con cada tipo de defecto y casos límite. Cuanto más rico sea el dataset, más preciso será el modelo final.</p>
 
-      <h3>Fase 2 — Entrenamiento del Modelo de IA</h3>
-      <p>Con las imágenes capturadas, entrenamos una red neuronal de Deep Learning — generalmente una arquitectura CNN o Vision Transformer — específica para tu producto. El modelo aprende a distinguir entre variaciones normales del proceso (que no son defecto) y anomalías reales que deben rechazarse.</p>
+      <h3>Fase 2: Entrenamiento del Modelo de IA</h3>
+      <p>Con las imágenes capturadas, entrenamos una red neuronal de Deep Learning, generalmente una arquitectura CNN o Vision Transformer, específica para tu producto. El modelo aprende a distinguir entre variaciones normales del proceso (que no son defecto) y anomalías reales que deben rechazarse.</p>
       <p>Este es el paso diferencial respecto a la visión artificial clásica: el modelo no necesita que le programes las reglas. Aprende de los datos. Y mejora con el tiempo, a medida que acumula más casos reales de tu línea.</p>
 
-      <h3>Fase 3 — Integración en Línea sin Parar la Producción</h3>
+      <h3>Fase 3: Integración en Línea sin Parar la Producción</h3>
       <p>La estación de inspección se integra en la línea existente. La instalación física (cámara, carcasa, iluminación, actuador de rechazo) se realiza en una parada programada de mantenimiento. El software se conecta al PLC o sistema de control ya existente mediante protocolos estándar (OPC-UA, Modbus, señales digitales).</p>
       <p>El sistema puede configurarse para parada automática de línea, rechazo físico de pieza defectuosa, alarma al operario o registro silencioso para auditoría. La decisión depende de tu proceso y nivel de criticidad.</p>
 
-      <h3>Fase 4 — Validación, Puesta en Marcha y Mejora Continua</h3>
+      <h3>Fase 4: Validación, Puesta en Marcha y Mejora Continua</h3>
       <p>Antes del arranque en producción real, validamos el sistema con un periodo de prueba paralelo: el sistema inspecciona pero no actúa, mientras se registran sus decisiones frente a la inspección humana. Esto permite ajustar el umbral de sensibilidad y verificar la tasa de falsos positivos y falsos negativos.</p>
       <p>Tras la puesta en marcha, el sistema genera datos continuos que usamos para mejorar el modelo con el tiempo.</p>
 
@@ -226,7 +180,7 @@
       <p>La inspección de piezas metálicas para detectar poros, grietas, rebabas y desviaciones dimensionales es una de las aplicaciones más maduras. Los sistemas trabajan con iluminación rasante que resalta defectos superficiales, y con visión 3D para verificación de cotas en piezas complejas.</p>
 
       <h3>Farmacia y Laboratorio</h3>
-      <p>Uno de los sectores más exigentes por regulación. La inspección de comprimidos, cápsulas, ampollas y envases requiere sistemas validados según normativa GMP. La visión artificial permite la inspección al 100% — no por muestreo — a velocidades de miles de unidades por minuto.</p>
+      <p>Uno de los sectores más exigentes por regulación. La inspección de comprimidos, cápsulas, ampollas y envases requiere sistemas validados según normativa GMP. La visión artificial permite la inspección al 100%, no por muestreo, a velocidades de miles de unidades por minuto.</p>
 
       <div class="stat-block">
         <div class="number">75%</div>
@@ -246,17 +200,17 @@
       <p>En sectores como automoción o farmacia, una reclamación de cliente puede costar entre 50 y 200 veces el valor de la pieza, entre gestión, análisis 8D, auditorías y penalizaciones. Reducir la tasa de escape a prácticamente cero tiene un impacto desproporcionado en la cuenta de resultados.</p>
 
       <div class="highlight-box">
-        <p><strong>Ejemplo orientativo:</strong> Una empresa de mecanizado de precisión con 6-8 empleados dedicados a inspección manual y una tasa de escape del 2-3% puede esperar, tras implementar visión artificial: eliminación o reducción drástica del personal de inspección, reducción de reclamaciones del 80-95% y un payback típico de 6 a 12 meses dependiendo del volumen de producción. Los números exactos dependen de tu proceso — por eso hacemos el análisis antes de proponer nada.</p>
+        <p><strong>Ejemplo orientativo:</strong> Una empresa de mecanizado de precisión con 6-8 empleados dedicados a inspección manual y una tasa de escape del 2-3% puede esperar, tras implementar visión artificial: eliminación o reducción drástica del personal de inspección, reducción de reclamaciones del 80-95% y un payback típico de 6 a 12 meses dependiendo del volumen de producción. Los números exactos dependen de tu proceso, por eso hacemos el análisis antes de proponer nada.</p>
       </div>
 
       <h2>Integración con Sistemas Existentes: MES, ERP y SCADA</h2>
       <p>Una pregunta frecuente es si el sistema de visión artificial puede integrarse con la infraestructura ya instalada. La respuesta es sí, y es parte fundamental del diseño.</p>
       <p>Los datos de inspección (pieza inspeccionada, resultado, imagen del defecto, timestamp) se integran en tiempo real con:</p>
       <ul>
-        <li><strong>MES (Manufacturing Execution System)</strong> — para trazabilidad completa de cada pieza y lote</li>
-        <li><strong>ERP</strong> — para actualización automática de inventario de no conformes y generación de informes de calidad</li>
-        <li><strong>SCADA</strong> — para visualización en tiempo real del estado de la línea y alertas al supervisor</li>
-        <li><strong>PLC</strong> — para control directo del actuador de rechazo o señal de parada de línea</li>
+        <li><strong>MES (Manufacturing Execution System):</strong> para trazabilidad completa de cada pieza y lote</li>
+        <li><strong>ERP:</strong> para actualización automática de inventario de no conformes y generación de informes de calidad</li>
+        <li><strong>SCADA:</strong> para visualización en tiempo real del estado de la línea y alertas al supervisor</li>
+        <li><strong>PLC:</strong> para control directo del actuador de rechazo o señal de parada de línea</li>
       </ul>
       <p>El resultado es un flujo de datos completamente automatizado: desde la detección del defecto hasta el registro en el sistema de gestión de calidad, sin intervención manual.</p>
 
@@ -264,11 +218,11 @@
       <p>Hay dos tipos de proveedor de visión artificial: los que venden hardware estándar con software genérico, y los que diseñan el sistema alrededor de tu defecto concreto. Nosotros somos lo segundo.</p>
       <p>En Sastre AI desarrollamos cada proyecto desde cero: seleccionamos la óptica, diseñamos la iluminación, entrenamos el modelo con tus piezas reales y lo integramos con tu infraestructura. No vendemos una caja negra: entregamos un sistema que tu equipo puede operar, monitorizar y que mejora con el tiempo.</p>
       <ul>
-        <li><strong>Análisis gratuito</strong> — Evaluamos tu línea y estimamos el ROI antes de cualquier propuesta</li>
-        <li><strong>Desarrollo a medida</strong> — El modelo se entrena con tus piezas, no con datos genéricos</li>
-        <li><strong>Integración sin parar producción</strong> — Instalación en paradas programadas, sin impacto operativo</li>
-        <li><strong>Soporte continuo</strong> — Mejora del modelo con nuevos datos de tu proceso</li>
-        <li><strong>ROI garantizado</strong> — Si el análisis previo no muestra ROI claro, no avanzamos</li>
+        <li><strong>Análisis gratuito:</strong> Evaluamos tu línea y estimamos el ROI antes de cualquier propuesta</li>
+        <li><strong>Desarrollo a medida:</strong> El modelo se entrena con tus piezas, no con datos genéricos</li>
+        <li><strong>Integración sin parar producción:</strong> Instalación en paradas programadas, sin impacto operativo</li>
+        <li><strong>Soporte continuo:</strong> Mejora del modelo con nuevos datos de tu proceso</li>
+        <li><strong>ROI garantizado:</strong> Si el análisis previo no muestra ROI claro, no avanzamos</li>
       </ul>
 
       <hr class="separator" />
@@ -309,7 +263,7 @@
     </article>
   </div>
 
-  <footer>
+  <footer class="article-footer">
     <p>© 2026 <a href="https://sastreai.es">Sastre AI</a> · <a href="mailto:sastre@sastreai.es">sastre@sastreai.es</a> · <a href="https://sastreai.es/blog/">Blog</a></p>
   </footer>
 </body>
