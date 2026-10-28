@@ -1,25 +1,26 @@
 # Sastre AI
 
-> Empresa española de Inteligencia Artificial aplicada al sector industrial. Soluciones 100% a medida: automatización de procesos, visión artificial para control de calidad, agentes IA, dashboards en tiempo real e integración con ERP/CRM.
+> Sastre AI es la práctica independiente de José Manuel Sastre, ingeniero industrial colegiado (nº 1537) con base en Cartagena (España). Ofrece dirección facultativa de obra, implantación de automatización e inteligencia artificial en empresas y cálculo de estructura metálica con memoria y visado. Lema: Tailored Engineering (ingeniería a medida).
 
 ## Servicios
-- Automatización de procesos industriales
-- Visión artificial y control de calidad en línea de producción
-- Agentes y asistentes IA para operaciones
-- Dashboards de datos en tiempo real
-- Software y apps a medida con IA integrada
-- Integración de ERP, CRM y maquinaria existente
+- Dirección facultativa de obra: supervisión de la ejecución, control de calidad, conformidad y certificación de obra en entornos industriales, entre ellos salas blancas e instalaciones del sector farmacéutico, con apoyo del modelo BIM.
+- Automatización e inteligencia artificial: análisis de datos operativos y de mantenimiento, mantenimiento predictivo, automatización de procesos y extracción de datos de modelos BIM (Python, IFC).
+- Cálculo de estructura metálica: cálculo y comprobación de uniones y estructuras según EAE y Eurocódigo 3, con memoria y documentación para visado colegial (IDEA StatiCa, CYPE, Revit). Pensado para talleres, caldererías e instaladores.
 
-## Resultados demostrados
-- 80% de reducción en tareas manuales
-- Sistemas activos 24/7
-- ROI medible desde el día 1
-- Soluciones que no interrumpen la operativa
+## Forma de trabajar
+- La ingeniería va primero; la inteligencia artificial es una herramienta más, que se usa cuando aporta.
+- Partir de la documentación y de la realidad de la obra, ir a lo concreto y dejar todo bien registrado.
+- Cada proyecto se presupuesta a medida después de una primera conversación sin compromiso.
+
+## Trayectoria
+- Iberdrola (2019), Herjimar · Navantia (2020–2022), SENER · Uniper en Alemania (2022–2024), Siemens Energy en Argentina (2024), Elecnor · Enagás (2025–2026).
+- Ha trabajado también con Grifols y Talasur.
+- Formación: Grado en Ingeniería Mecánica y Máster en Ingeniería Industrial (UPCT); MBA en Dirección de Proyectos y Máster en Inteligencia Artificial (UNIR).
 
 ## Contacto
-- Web: https://sastreai.es
+- Web: https://sastreai.es (English: https://sastreai.es/en/)
 - Email: sastre@sastreai.es
-- Teléfono: +34 654 06 13 24
+- Teléfono y WhatsApp: +34 654 06 13 24
 
 ## Artículos
 - [IA para Reducir Tareas Manuales en Fábrica: Tu Guía Pyme](https://sastreai.es/blog/reducir-tareas-manuales-en-fabrica-con-ia/)
@@ -31,6 +32,3 @@
 - [Integrar ERP con IA: Optimiza tu Industria con Sastre AI](https://sastreai.es/blog/integrar-erp-con-inteligencia-artificial/)
 - [Visión Artificial para Control de Calidad Industrial: Cero Defectos con IA](https://sastreai.es/blog/vision-artificial-control-calidad-industrial/)
 - [Automatización Industrial con IA: ROI y Eficiencia | Sastre AI](https://sastreai.es/blog/automatizacion-industrial-con-inteligencia-artificial/)
-
-## Página de precios
-https://sastreai.es/pricing.md

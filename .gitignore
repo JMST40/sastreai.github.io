@@ -1,0 +1,16 @@
+# Claves y certificados
+*.key
+*.pem
+*.crt
+
+# Material privado o de trabajo (no se publica)
+IMÁGENES SASTRE AI*/
+*.zip
+Jose Manuel Sastre/CV*
+Jose Manuel Sastre/Foto perfil.jpeg
+carta_presentacion_sastre_ai.pdf
+SASTRE_AI_CONTEXTO.md
+SKILL.md
+skills-lock.json
+.agents/
+.claude/
